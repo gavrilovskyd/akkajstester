@@ -52,9 +52,12 @@ public class TesterRoutes extends AllDirectives {
                                   resp.withStatus(StatusCodes.NOT_FOUND)
                                           .withEntity("submition does not found");
                               } else {
+                                  try {
+                                      Byte[] marshaled = mapper.writeValueAsBytes(parameter);
+                                  }
                                   resp.withStatus(StatusCodes.OK)
                                           .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON,
-                                                  mapper.writeValueAsBytes(parameter)));
+                                                  ));
                               }
 
 
