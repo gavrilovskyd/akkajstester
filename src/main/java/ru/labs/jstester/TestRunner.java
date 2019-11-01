@@ -21,7 +21,7 @@ public class TestRunner extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TestTask.class, task -> {
-                    System.out.println(task.getTest().getParams().toString());
+                    System.out.println(task.getTest().getParams());
 
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName(JS_ENGINE);
                     engine.eval(task.getMeta().getJsCode());
