@@ -9,7 +9,7 @@ public class TesterRoutes extends AllDirectives {
 
     public Route routes() {
         return route(
-                path("submits", () ->
+                pathPrefix("submits", () ->
                         route(
                                 path(PathMatchers.segment(), packageID -> route(
                                             getSubmit(packageID)
