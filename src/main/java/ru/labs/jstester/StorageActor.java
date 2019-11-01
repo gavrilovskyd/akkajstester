@@ -28,6 +28,10 @@ public class StorageActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder.create().build();
+        return ReceiveBuilder.create()
+                .match(StoreMessage.class, m -> {
+                    
+                })
+                .build();
     }
 }
