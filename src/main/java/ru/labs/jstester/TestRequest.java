@@ -4,13 +4,13 @@ public class TestRequest {
     private String packageID;
     private String jsCode;
     private String functionName;
-    private Test[] test;
+    private Test[] tests;
 
-    public TestRequest(String packageID, String jsCode, String functionName, Test test) {
+    public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
         this.packageID = packageID;
         this.jsCode = jsCode;
         this.functionName = functionName;
-        this.test = test;
+        this.tests = tests;
     }
 
     public String getPackageID() {
