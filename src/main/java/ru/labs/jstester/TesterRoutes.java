@@ -33,7 +33,8 @@ public class TesterRoutes extends AllDirectives {
 
     private Route getSubmit(String packageID) {
         return get(()-> {
-             CompletionStage<Optional<List<TestResult>>> Patterns.ask(this.requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
+             CompletionStage<Optional<List<TestResult>>> possibleResult =
+                     Patterns.ask(this.requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
         });
     }
 
