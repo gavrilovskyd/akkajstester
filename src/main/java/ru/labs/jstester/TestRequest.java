@@ -1,9 +1,7 @@
 package ru.labs.jstester;
 
 public class TestRequest {
-    private String packageID;
-    private String jsCode;
-    private String functionName;
+    private TestMetaInfo meta;
     private Test[] tests;
 
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
