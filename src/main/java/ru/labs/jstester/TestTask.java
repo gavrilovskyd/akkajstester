@@ -6,4 +6,10 @@ public class TestTask {
     private String functionName;
     private Test[] tests;
 
+    public TestTask(String packageID, String jsCode, String functionName, Test[] tests) {
+        this.packageID = packageID;
+        this.jsCode = jsCode;
+        this.functionName = functionName;
+        this.tests = tests;
+    }
 }
