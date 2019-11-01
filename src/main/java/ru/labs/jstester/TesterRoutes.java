@@ -54,12 +54,13 @@ public class TesterRoutes extends AllDirectives {
                               } else {
                                   try {
                                       Byte[] marshaled = mapper.writeValueAsBytes(parameter);
+                                      resp.withStatus(StatusCodes.OK)
+                                              .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON,
+                                                      ));
                                   } catch (JsonProcessingException e) {
-                                      
+
                                   }
-                                  resp.withStatus(StatusCodes.OK)
-                                          .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON,
-                                                  ));
+
                               }
 
 
