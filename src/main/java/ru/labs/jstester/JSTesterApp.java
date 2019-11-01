@@ -19,6 +19,6 @@ public class JSTesterApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         HTTPServer server = new HTTPServer();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = server.createRoute().flow(system, materializer);
-        http.bindAndHandle(routeFlow, ConnectHttp.toHost("localhost", ))
+        http.bindAndHandle(routeFlow, ConnectHttp.toHost("localhost", 8080), materializer);
     }
 }
