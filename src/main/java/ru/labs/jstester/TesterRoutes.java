@@ -10,7 +10,8 @@ public class TesterRoutes extends AllDirectives {
         return route(
                 path("submits", () ->
                         route(
-                                get(() -> { return complete("GET submits"); }),
+                                get(() ->
+                                        parameter("")),
                                 post(() -> { return complete("POST submits"); })
                         )
                 )
