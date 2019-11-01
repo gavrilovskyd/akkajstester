@@ -44,7 +44,7 @@ public class TesterRoutes extends AllDirectives {
                       .map(new Mapper<Object, HttpResponse>(){
                           @Override
                           public HttpResponse apply(Object parameter) {
-                            return new Http
+                            return com
                           }
                       }, system.dispatcher());
               completeWith
