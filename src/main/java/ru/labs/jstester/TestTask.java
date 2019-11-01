@@ -4,9 +4,9 @@ public class TestTask {
     private String packageID;
     private String jsCode;
     private String functionName;
-    private Test[] tests;
+    private Test test;
 
-    public TestTask(String packageID, String jsCode, String functionName, Test[] tests) {
+    public TestTask(String packageID, String jsCode, String functionName, Test test) {
         this.packageID = packageID;
         this.jsCode = jsCode;
         this.functionName = functionName;
