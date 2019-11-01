@@ -2,8 +2,10 @@ package ru.labs.jstester;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Status;
 import akka.dispatch.Mapper;
 import akka.dispatch.OnComplete;
+import akka.http.javadsl.Http;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.StatusCode;
@@ -44,7 +46,10 @@ public class TesterRoutes extends AllDirectives {
                       .map(new Mapper<Object, HttpResponse>(){
                           @Override
                           public HttpResponse apply(Object parameter) {
-                            return com
+                              HttpResponse resp = HttpResponse.create();
+                              if (parameter == null) {
+                                  resp.withStatus(StatusCodes.NOT_FOUND)
+                              }
                           }
                       }, system.dispatcher());
               completeWith
