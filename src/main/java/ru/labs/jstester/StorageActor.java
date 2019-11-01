@@ -8,7 +8,9 @@ import java.util.HashMap;
 public class StorageActor extends AbstractActor {
     private HashMap<String, String> storage = new HashMap<>();
 
-    public static final class 
+    public static final class StoreMessage {
+        private String key;
+    }
 
     @Override
     public Receive createReceive() {
