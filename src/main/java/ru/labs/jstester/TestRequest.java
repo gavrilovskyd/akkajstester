@@ -5,9 +5,7 @@ public class TestRequest {
     private Test[] tests;
 
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
-        this.packageID = packageID;
-        this.jsCode = jsCode;
-        this.functionName = functionName;
+        this.meta = new TestMetaInfo(packageID, jsCode, functionName);
         this.tests = tests;
     }
 
