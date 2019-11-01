@@ -2,6 +2,7 @@ package ru.labs.jstester;
 
 import akka.actor.ActorRef;
 import akka.http.javadsl.marshallers.jackson.Jackson;
+import akka.http.javadsl.model.StatusCode;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
@@ -41,7 +42,7 @@ public class TesterRoutes extends AllDirectives {
                         post(() ->
                                 entity(Jackson.unmarshaller(TestRequest.class), r -> {
                                     this.requestRouter.tell(r, ActorRef.noSender());
-                                    return complete()
+                                    return complete(StatusCode.OK,)
                                 }))
                 )
         );
