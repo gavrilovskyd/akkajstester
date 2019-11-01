@@ -7,6 +7,7 @@ public class Test {
     private Object[] params;
 
     public Test(int innerID, String name, String expectedResult, Object[] params) {
+        this.innerID = innerID;
         this.testName = name;
         this.expectedResult = expectedResult;
         this.params = params;
