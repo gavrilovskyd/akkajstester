@@ -40,7 +40,8 @@ public class TesterRoutes extends AllDirectives {
                 route(
                         post(() ->
                                 entity(Jackson.unmarshaller(TestRequest.class), r -> {
-                                    
+                                    this.requestRouter.tell(r, ActorRef.noSender());
+                                    return complete()
                                 }))
                 )
         );
