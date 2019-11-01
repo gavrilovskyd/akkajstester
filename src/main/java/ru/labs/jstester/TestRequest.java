@@ -9,9 +9,7 @@ public class TestRequest {
     private Test[] tests;
 
     public TestRequest() {
-        this.packageID = "";
-        this.jsCode = "";
-        this.functionName = "";
+        this.meta = new TestMetaInfo("", "", "");
         this.tests = new Test[]{};
     }
 
