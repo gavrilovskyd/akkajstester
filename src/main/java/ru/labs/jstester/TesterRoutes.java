@@ -12,6 +12,8 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import scala.concurrent.Future;
 
+import java.util.List;
+
 public class TesterRoutes extends AllDirectives {
     private int TIMEOUT_MS = 5000;
 
