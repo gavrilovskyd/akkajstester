@@ -41,7 +41,9 @@ public class TesterRoutes extends AllDirectives {
               possibleResult.onComplete(new OnComplete<Object>() {
                   @Override
                   public void onComplete(Throwable failure, Object result) {
-                      
+                      if (failure != null) {
+                          complete(StatusCodes.INTERNAL_SERVER_ERROR, failure.toString());
+                      }
                   }
               }, system.dispatcher());
     });
