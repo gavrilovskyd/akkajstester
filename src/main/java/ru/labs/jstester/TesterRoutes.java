@@ -48,7 +48,7 @@ public class TesterRoutes extends AllDirectives {
                       .map(new Mapper<Object, HttpResponse>(){
                           @Override
                           public HttpResponse apply(Object parameter) {
-                              if (!(parameter instanceof ArrayList<?>)) {
+                              if (!(parameter instanceof TestResult[])) {
                                   return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                           .withEntity("Unknown error instanceof");
                               }
