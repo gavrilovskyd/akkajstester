@@ -9,13 +9,11 @@ import akka.routing.BalancingPool;
 
 public class RequestRouter extends AbstractActor {
     private ActorRef resultStorage;
+    private ActorRef runnersPool;
 
     public RequestRouter() {
         this.resultStorage = getContext().actorOf(Props.create(ResultsStorage.class), "result-storage");
 
-        system.actorOf(
-                new BalancingPool()
-        )
     }
 
     @Override
