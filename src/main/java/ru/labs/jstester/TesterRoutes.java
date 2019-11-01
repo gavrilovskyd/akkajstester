@@ -5,6 +5,7 @@ import akka.actor.ActorSystem;
 import akka.dispatch.Mapper;
 import akka.dispatch.OnComplete;
 import akka.http.javadsl.marshallers.jackson.Jackson;
+import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.model.StatusCode;
 import akka.http.javadsl.model.StatusCodes;
 import akka.http.javadsl.server.AllDirectives;
@@ -40,8 +41,8 @@ public class TesterRoutes extends AllDirectives {
         return get(()-> {
               Future<Object> possibleResult = Patterns
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
-                      .map(new Mapper<Object, >);
-              completeWi
+                      .map(new Mapper<Object, HttpResponse>);
+              completeWith
 
     });
     }
