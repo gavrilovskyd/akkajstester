@@ -7,6 +7,7 @@ public class TestMetaInfo {
     private String packageID;
     @JsonProperty("js_code")
     private String jsCode;
+    @JsonProperty("function_name")
     private String functionName;
 
     public TestMetaInfo(String packageID, String jsCode, String functionName) {
