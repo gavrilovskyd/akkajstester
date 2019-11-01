@@ -31,7 +31,7 @@ public class StorageActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class, m -> {
                     storage.put(m.getKey(), m.getValue());
-                    System.out.println(String.format("message: K: %s, V: %s", ));
+                    System.out.println(String.format("message: K: %s, V: %s", m.getKey(), m.getValue()));
                 })
                 .build();
     }
