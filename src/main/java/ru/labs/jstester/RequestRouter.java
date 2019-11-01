@@ -28,7 +28,7 @@ public class RequestRouter extends AbstractActor {
                     }
                 })
                 .match(ResultRequest.class, r -> {
-                    this.resultStorage.forward(r, getContext());
+                    resultStorage.forward(r, getContext());
                 })
                 .build();
     }
