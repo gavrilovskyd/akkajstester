@@ -1,6 +1,7 @@
 package ru.labs.jstester;
 
 import akka.actor.ActorRef;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
@@ -30,7 +31,7 @@ public class TesterRoutes extends AllDirectives {
     private Route getSubmit(String packageID) {
         return get(()-> {
               Future<Object> possibleResult = Patterns.ask(this.requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
-              return completeOKWithFuture()
+              return completeOKWithFuture(possibleResult, Jackson.marshaller());
     });
     }
 
