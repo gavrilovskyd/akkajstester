@@ -15,7 +15,7 @@ public class TesterRoutes extends AllDirectives {
                                             getSubmit(packageID)
                                         )
                                 ),
-
+                                postSubmit()
                         )
                 )
         );
