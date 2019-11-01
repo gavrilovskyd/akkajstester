@@ -3,6 +3,7 @@ package ru.labs.jstester;
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class ResultsStorage extends AbstractActor {
                     List<TestResult> results = innerStorage.get(r.getTest().getPackageID());
 
                     if (results == null) {
-                        results = new List<TestResult>{r};
+                        results = new ArrayList<>();
                         innerStorage.put(r.getTest().getPackageID(), results);
                     } else {
                         results
