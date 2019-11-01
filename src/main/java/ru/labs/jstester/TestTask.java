@@ -10,7 +10,7 @@ public class TestTask {
         this.packageID = packageID;
         this.jsCode = jsCode;
         this.functionName = functionName;
-        this.tests = tests;
+        this.test = test;
     }
 
     public String getPackageID() {
