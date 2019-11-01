@@ -9,9 +9,9 @@ public class TestRequest {
 
     public TestRequest() {
         this.packageID = "";
-        this.jsCode = jsCode;
-        this.functionName = functionName;
-        this.tests = tests;
+        this.jsCode = "";
+        this.functionName = "";
+        this.tests = [];
     }
 
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
