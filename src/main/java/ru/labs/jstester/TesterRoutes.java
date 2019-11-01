@@ -45,7 +45,7 @@ public class TesterRoutes extends AllDirectives {
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
                       .map(new Mapper<Object, HttpResponse>(){
                           @Override
-                          public HttpResponse apply(Object parameter) throws JsonProcessingException {
+                          public HttpResponse apply(Object parameter) {
                               HttpResponse resp = HttpResponse.create();
                               ObjectMapper mapper = new ObjectMapper();
                               if (parameter == null) {
