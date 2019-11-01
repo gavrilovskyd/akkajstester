@@ -7,7 +7,7 @@ public class HTTPServer {
     private TesterRoutes testerRoutes;
 
     public HTTPServer(ActorRef requestRouter) {
-        testerRoutes = new TesterRoutes();
+        testerRoutes = new TesterRoutes(requestRouter);
     }
 
     public Route createRoute() {
