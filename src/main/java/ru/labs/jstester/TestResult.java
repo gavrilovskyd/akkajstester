@@ -7,5 +7,5 @@ public class TestResult {
 
     private Test test;
     private String actualResult;
-    private String verdict;
+    private String status;
 }
