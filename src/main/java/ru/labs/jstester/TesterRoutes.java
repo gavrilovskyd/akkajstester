@@ -41,7 +41,7 @@ public class TesterRoutes extends AllDirectives {
 
     private Route getSubmit(String packageID) {
         return get(()-> {
-              Future<HttpResponse> possibleResult = Patterns
+              Future<HttpResponse> possibleResponce = Patterns
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
                       .map(new Mapper<Object, HttpResponse>(){
                           @Override
@@ -65,6 +65,7 @@ public class TesterRoutes extends AllDirectives {
                               return resp;
                           }
                       }, system.dispatcher());
+              return completeWithFutureResponse(possibleResult)
     });
     }
 
