@@ -29,6 +29,8 @@ public class ResultsStorage extends AbstractActor {
 
                     if (results == null) {
                         getSender().tell(new TestResult[]{}, getSelf());
+                    } else {
+                        getSender().tell();
                     }
                 })
                 .build();
