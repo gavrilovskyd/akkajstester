@@ -6,10 +6,13 @@ import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 
+import java.time.Duration;
 import java.util.Optional;
 import java.util.concurrent.CompletionStage;
 
 public class TesterRoutes extends AllDirectives {
+    private int TIMOUT = 5000;
+
     private ActorRef requestRouter;
 
     public TesterRoutes(ActorRef requestRouter) {
