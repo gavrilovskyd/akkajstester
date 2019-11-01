@@ -4,6 +4,6 @@ import akka.actor.ActorSystem;
 
 public class JSTesterApp {
     public static void main(String[] args) throws Exception {
-        ActorSystem system = new ActorSystem()
+        ActorSystem system = ActorSystem.create("");
     }
 }
