@@ -9,6 +9,6 @@ public class JSTesterApp {
         ActorSystem system = ActorSystem.create("testing-system");
 
         ActorRef storageActor = system.actorOf(Props.create(StorageActor.class), "storage-actor");
-        
+        storageActor.tell(new StorageActor.StoreMessage("hello", "world"));
     }
 }
