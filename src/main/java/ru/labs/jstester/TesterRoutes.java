@@ -9,7 +9,6 @@ import akka.pattern.Patterns;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {
     private int TIMEOUT_MS = 5000;
@@ -33,7 +32,7 @@ public class TesterRoutes extends AllDirectives {
 
     private Route getSubmit(String packageID) {
         return get(()-> {
-            
+             Patterns.ask(this.requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
         });
     }
 
