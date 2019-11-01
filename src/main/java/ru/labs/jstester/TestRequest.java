@@ -13,15 +13,15 @@ public class TestRequest {
 
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
         //this.meta = new TestMetaInfo(packageID, jsCode, functionName);
-        his.packageID = packageID;
+        this.packageID = packageID;
         this.jsCode = jsCode;
         this.functionName = functionName;
         this.tests = tests;
     }
 
-    public TestMetaInfo getMeta() {
-        return meta;
-    }
+    //public TestMetaInfo getMeta() {
+    //    return meta;
+    //}
 
     public Test[] getTests() {
         return tests;
