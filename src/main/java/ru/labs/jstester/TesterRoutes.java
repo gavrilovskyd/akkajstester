@@ -5,10 +5,6 @@ import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {
