@@ -6,6 +6,8 @@ public class TestMetaInfo {
     private String functionName;
 
     public TestMetaInfo(String packageID, String jsCode, String functionName) {
-
+        this.packageID = packageID;
+        this.jsCode = jsCode;
+        this.functionName = functionName;
     }
 }
