@@ -38,7 +38,10 @@ public class TesterRoutes extends AllDirectives {
     private Route postSubmit() {
         return pathEnd(() ->
                 route(
-                        post(() -> { return complete("POST submits"); })
+                        post(() ->
+                                entity(Jackson.unmarshaller(TestRequest.class), r -> {
+                                    
+                                }))
                 )
         );
     }
