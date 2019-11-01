@@ -12,8 +12,7 @@ public class TesterRoutes extends AllDirectives {
                 path("submits", () ->
                         route(
                                 path(PathMatchers.segment(), packageID -> route(
-                                            get(() -> {  })
-                                        )
+                                        getSubmit(packageID))
                                 ),
                                 post(() -> { return complete("POST submits"); })
                         )
