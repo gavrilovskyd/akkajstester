@@ -1,4 +1,6 @@
 package ru.labs.jstester;
 
-public class TesterRoutes {
+import akka.http.javadsl.server.AllDirectives;
+
+public class TesterRoutes extends AllDirectives {
 }
