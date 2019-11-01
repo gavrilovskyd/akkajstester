@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class TestRequest extends TestMetaInfo {
-    private TestMetaInfo meta;
     private Test[] tests;
 
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
