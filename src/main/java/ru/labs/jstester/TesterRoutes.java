@@ -49,12 +49,14 @@ public class TesterRoutes extends AllDirectives {
                           @Override
                           public HttpResponse apply(Object parameter) {
                               HttpResponse resp = HttpResponse.create();
-                              ObjectMapper mapper = new ObjectMapper();
                               if (!(parameter instanceof ArrayList<?>)) {
                                   resp.withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                           .withEntity("Unknown error");
                                   return resp;
-                              } else if (ArrayList<TestResult>) {
+                              }
+                              
+                              ObjectMapper mapper = new ObjectMapper();
+
 
                               }else {
                                   try {
