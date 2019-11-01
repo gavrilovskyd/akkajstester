@@ -11,15 +11,7 @@ public class TestRunner extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TestTask.class, r -> {
-                    List<TestResult> results = innerStorage.get(r.getTest().getPackageID());
-
-                    if (results == null) {
-                        results = new ArrayList<>();
-                        results.add(r);
-                        innerStorage.put(r.getTest().getPackageID(), results);
-                    } else {
-                        results.add(r);
-                    }
+                    
                 })
                 .build();
     }
