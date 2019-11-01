@@ -58,7 +58,7 @@ public class TesterRoutes extends AllDirectives {
                               if (results.size() == 0) {
                                   return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
                                           .withEntity("Submit does not found");;
-                              } else {
+                              }
                                   try {
                                       System.out.println(parameter);
                                       byte[] marshaled = mapper.writeValueAsBytes(parameter);
@@ -68,7 +68,7 @@ public class TesterRoutes extends AllDirectives {
                                       resp.withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                               .withEntity("Unknown error");
                                   }
-                              }
+                              
 
                               return resp;
                           }
