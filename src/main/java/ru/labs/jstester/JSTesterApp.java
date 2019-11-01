@@ -22,5 +22,7 @@ public class JSTesterApp {
         http.bindAndHandle(routeFlow, ConnectHttp.toHost("localhost", 8080), materializer);
 
         System.out.println("Server started at http://localhost:8080/");
+        System.in.read();
+        
     }
 }
