@@ -11,6 +11,8 @@ public class StorageActor extends AbstractActor {
     public static final class StoreMessage {
         private String key;
         private String value;
+
+        
     }
 
     @Override
