@@ -10,6 +10,8 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import scala.concurrent.Future;
 
+import java.util.concurrent.CompletionStage;
+
 public class TesterRoutes extends AllDirectives {
     private int TIMEOUT_MS = 5000;
 
@@ -32,7 +34,7 @@ public class TesterRoutes extends AllDirectives {
 
     private Route getSubmit(String packageID) {
         return get(()-> {
-              Future<Object> possibleResult = Patterns.ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
+              CompletionStage<Object> possibleResult = Patterns.ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
               return onSuccess(() -> possibleResult,
                       performed -> {
 
