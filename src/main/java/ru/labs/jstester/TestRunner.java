@@ -26,7 +26,7 @@ public class TestRunner extends AbstractActor {
 
                     Invocable invocable = (Invocable)engine;
                     String output = invocable.invokeFunction(
-                            task.getFunctionName(), task.getTest().getParams()
+                            task.getMeta().getFunctionName(), task.getTest().getParams()
                     ).toString(); // TODO: add timeout
 
                     String status = (output.equals(task.getTest().getExpectedResult()) ?
