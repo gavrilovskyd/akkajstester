@@ -31,7 +31,7 @@ public class ResultsStorage extends AbstractActor {
                     if (results == null) {
                         getSender().tell(new TestResult[]{}, getSelf());
                     } else {
-                        getSender().tell(results.toArray(), getSelf()); // TODO: add sort
+                        getSender().tell(results.toArray(), getSelf()); // TODO: add sort by innerID
                     }
                 })
                 .build();
