@@ -25,7 +25,7 @@ public class TestRequest {
         return functionName;
     }
 
-    public Test getTest() {
-        return test;
+    public Test[] getTests() {
+        return tests;
     }
 }
