@@ -16,6 +16,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import scala.concurrent.Future;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TesterRoutes extends AllDirectives {
@@ -49,7 +50,7 @@ public class TesterRoutes extends AllDirectives {
                           public HttpResponse apply(Object parameter) {
                               HttpResponse resp = HttpResponse.create();
                               ObjectMapper mapper = new ObjectMapper();
-                              if (parameter instanceof List<TestResult>) {
+                              if (parameter instanceof ArrayList<TestResult>) {
                                   resp.withStatus(StatusCodes.NOT_FOUND)
                                           .withEntity("submit does not found");
                               } else {
