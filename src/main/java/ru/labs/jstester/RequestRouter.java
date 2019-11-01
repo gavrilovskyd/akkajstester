@@ -1,4 +1,6 @@
 package ru.labs.jstester;
 
-public class RequestRouter {
+import akka.actor.AbstractActor;
+
+public class RequestRouter extends AbstractActor {
 }
