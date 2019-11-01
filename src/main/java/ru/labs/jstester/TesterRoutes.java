@@ -42,7 +42,10 @@ public class TesterRoutes extends AllDirectives {
               Future<Object> possibleResult = Patterns
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
                       .map(new Mapper<Object, HttpResponse>(){
-                          
+                          @Override
+                          public HttpResponse apply(Object parameter) {
+                              return super.apply(parameter);
+                          }
                       });
               completeWith
 
