@@ -48,8 +48,12 @@ public class TesterRoutes extends AllDirectives {
                           public HttpResponse apply(Object parameter) {
                               HttpResponse resp = HttpResponse.create();
                               if (parameter == null) {
-                                  resp.withStatus(StatusCodes.NOT_FOUND)
+                                  resp.withStatus(StatusCodes.NOT_FOUND);
+                              } else {
+                                  resp.withStatus(StatusCodes.OK);
                               }
+
+                              
                           }
                       }, system.dispatcher());
               completeWith
