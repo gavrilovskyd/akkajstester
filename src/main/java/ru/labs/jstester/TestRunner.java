@@ -21,15 +21,6 @@ public class TestRunner extends AbstractActor {
                         results.add(r);
                     }
                 })
-                .match(ResultRequest.class, r -> {
-                    List<TestResult> results = innerStorage.get(r.getPackageID());
-
-                    if (results == null) {
-                        getSender().tell(new TestResult[]{}, getSelf());
-                    } else {
-                        getSender().tell(results.toArray(), getSelf()); // TODO: add sort by innerID
-                    }
-                })
                 .build();
     }
 }
