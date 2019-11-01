@@ -1,6 +1,7 @@
 package ru.labs.jstester;
 
 public class Test {
+    private int innerID;
     private String testName;
     private String expectedResult;
     private Object[] params;

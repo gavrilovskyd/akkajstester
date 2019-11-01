@@ -12,7 +12,7 @@ public class ResultsStorage extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TestResult.class, r -> {
-                    storage.put(m.getKey(), m.getValue());
+                    innerStorage.put(m.getKey(), m.getValue());
                     System.out.println(String.format("message: K: %s, V: %s", m.getKey(), m.getValue()));
                 })
                 .build();
