@@ -8,7 +8,7 @@ public class TesterRoutes extends AllDirectives {
 
     public Route routes() {
         return route(
-                path("submits"), () ->
+                path("submits", () ->
                         route(
                                 get(() -> { return complete("GET submits"); }),
                                 post(() -> { return complete("POST submits"); })
