@@ -1,6 +1,7 @@
 package ru.labs.jstester;
 
 import akka.http.javadsl.server.AllDirectives;
+import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
 
 public class TesterRoutes extends AllDirectives {
@@ -10,8 +11,10 @@ public class TesterRoutes extends AllDirectives {
         return route(
                 path("submits", () ->
                         route(
-                                get(() ->
-                                        parameter("package_id")),
+                                path(PathMatchers.segment(), packageID -> route(
+                                        get(())
+                                        )
+                                ),
                                 post(() -> { return complete("POST submits"); })
                         )
                 )
