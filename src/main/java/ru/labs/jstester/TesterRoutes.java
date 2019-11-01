@@ -49,7 +49,7 @@ public class TesterRoutes extends AllDirectives {
                           public HttpResponse apply(Object parameter) {
                               HttpResponse resp = HttpResponse.create();
                               ObjectMapper mapper = new ObjectMapper();
-                              if (parameter == null) {
+                              if (parameter instanceof List<TestResult>) {
                                   resp.withStatus(StatusCodes.NOT_FOUND)
                                           .withEntity("submit does not found");
                               } else {
