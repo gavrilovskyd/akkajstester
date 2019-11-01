@@ -7,6 +7,6 @@ public class TesterRoutes extends AllDirectives {
     public TesterRoutes() {}
 
     public Route routes() {
-        return
+        return route()
     }
 }
