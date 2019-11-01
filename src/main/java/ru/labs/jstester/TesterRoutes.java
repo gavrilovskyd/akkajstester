@@ -32,6 +32,6 @@ public class TesterRoutes extends AllDirectives {
                 route(
                         post(() -> { return complete("POST submits"); })
                 )
-        )
+        );
     }
 }
