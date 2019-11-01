@@ -11,6 +11,8 @@ public class RequestRouter extends AbstractActor {
 
     public RequestRouter(ActorSystem system) {
         this.resultStorage = system.actorOf(Props.create(ResultsStorage.class), "result-storage");
+
+        system.
     }
 
     @Override
