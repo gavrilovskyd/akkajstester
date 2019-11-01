@@ -4,7 +4,7 @@ public class TestTask {
     private TestMetaInfo meta;
     private Test test;
 
-    public TestTask(String packageID, String jsCode, String functionName, Test test) {
+    public TestTask(TestMetaInfo meta, Test test) {
         this.packageID = packageID;
         this.jsCode = jsCode;
         this.functionName = functionName;
