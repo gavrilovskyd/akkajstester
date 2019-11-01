@@ -52,7 +52,8 @@ public class TesterRoutes extends AllDirectives {
                                           .withEntity("submition does not found");
                               } else {
                                   resp.withStatus(StatusCodes.OK)
-                                          .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, mapper.writeValueAsBytes(parameter)))
+                                          .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON,
+                                                  mapper.writeValueAsBytes(parameter)));
                               }
 
 
