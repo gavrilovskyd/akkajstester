@@ -7,7 +7,7 @@ public class RequestRouter extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TestTask.class, task -> {
+                .match(TestRequest.class, task -> {
 
                 })
                 .build();
