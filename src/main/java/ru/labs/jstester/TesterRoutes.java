@@ -2,10 +2,7 @@ package ru.labs.jstester;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
-import akka.actor.Status;
 import akka.dispatch.Mapper;
-import akka.dispatch.OnComplete;
-import akka.http.javadsl.Http;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.AllDirectives;
@@ -15,9 +12,6 @@ import akka.pattern.Patterns;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import scala.concurrent.Future;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TesterRoutes extends AllDirectives {
     private int TIMEOUT_MS = 5000;
