@@ -1,8 +1,5 @@
 package ru.labs.jstester;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
-
 public class TestRequest {
     //private TestMetaInfo meta;
     private String packageID;
