@@ -51,7 +51,8 @@ public class TesterRoutes extends AllDirectives {
                                   resp.withStatus(StatusCodes.NOT_FOUND)
                                           .withEntity("submition does not found");
                               } else {
-                                  resp.withStatus(StatusCodes.OK);
+                                  resp.withStatus(StatusCodes.OK)
+                                          .withEntity(Jackson.marshaller())
                               }
 
 
