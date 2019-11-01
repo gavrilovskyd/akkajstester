@@ -14,4 +14,16 @@ public class TestResult {
         this.actualResult = actualResult;
         this.status = status;
     }
+
+    public Test getTest() {
+        return test;
+    }
+
+    public String getActualResult() {
+        return actualResult;
+    }
+
+    public String getStatus() {
+        return status;
+    }
 }
