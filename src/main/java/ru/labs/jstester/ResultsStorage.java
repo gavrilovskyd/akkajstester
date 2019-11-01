@@ -8,24 +8,6 @@ import java.util.HashMap;
 public class ResultsStorage extends AbstractActor {
     private HashMap<String, TestResult[]> innerStorage = new HashMap<>();
 
-    public static final class StoreMessage {
-        private String key;
-        private String value;
-
-        public StoreMessage(String k, String v) {
-            this.key = k;
-            this.value = v;
-        }
-
-        public String getKey() {
-            return key;
-        }
-
-        public String getValue() {
-            return value;
-        }
-    }
-
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
