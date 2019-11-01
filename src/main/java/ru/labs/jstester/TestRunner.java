@@ -13,6 +13,10 @@ public class TestRunner extends AbstractActor {
 
     private ActorRef resultStorage;
 
+    public TestRunner(ActorRef resultStorage) {
+        this.resultStorage = resultStorage;
+    }
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
