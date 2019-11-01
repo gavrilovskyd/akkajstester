@@ -10,6 +10,13 @@ public class Test {
     private String expectedResult;
     private Object[] params;
 
+    public Test() {
+        this.packageID = "";
+        this.testName = "";
+        this.expectedResult = "";
+        this.params = new Object[]{};
+    }
+
     public Test(String packageID, String name, String expectedResult, Object[] params) {
         this.packageID = packageID;
         this.testName = name;
