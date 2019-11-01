@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestRunner extends AbstractActor {
+    private final static String JS_ENGINE = "nashorn";
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
