@@ -12,6 +12,7 @@ import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import scala.concurrent.Future;
 
 import java.util.List;
@@ -45,6 +46,7 @@ public class TesterRoutes extends AllDirectives {
                           @Override
                           public HttpResponse apply(Object parameter) {
                               HttpResponse resp = HttpResponse.create();
+                              ObjectMapper mapper = new ObjectMapper();
                               if (parameter == null) {
                                   resp.withStatus(StatusCodes.NOT_FOUND)
                                           .withEntity("submition does not found");
