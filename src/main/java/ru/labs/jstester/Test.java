@@ -9,6 +9,7 @@ public class Test {
 
     public Test(int innerID, String packageID, String name, String expectedResult, Object[] params) {
         this.innerID = innerID;
+        this.packageID = packageID;
         this.testName = name;
         this.expectedResult = expectedResult;
         this.params = params;
