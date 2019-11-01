@@ -38,18 +38,7 @@ public class TesterRoutes extends AllDirectives {
     private Route getSubmit(String packageID) {
         return get(()-> {
               Future<Object> possibleResult = Patterns.ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
-              possibleResult.onComplete(new OnComplete<Object>() {
-                  @Override
-                  public void onComplete(Throwable failure, Object result) {
-                      if (failure != null) {
-                          complete(StatusCodes.INTERNAL_SERVER_ERROR, failure.toString());
-                      } else if (result == null) {
-                          complete(StatusCodes.NOT_FOUND, "solution not found");
-                      } else {
-                          complete(StatusCodes.OK, result, Jackson.marshaller());
-                      }
-                  }
-              }, system.dispatcher());
+
     });
     }
 
