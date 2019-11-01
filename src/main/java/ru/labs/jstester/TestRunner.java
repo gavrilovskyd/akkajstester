@@ -1,6 +1,7 @@
 package ru.labs.jstester;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
@@ -9,6 +10,8 @@ import javax.script.ScriptEngineManager;
 
 public class TestRunner extends AbstractActor {
     private final static String JS_ENGINE = "nashorn";
+
+    private ActorRef resultStorage;
 
     @Override
     public Receive createReceive() {
@@ -22,7 +25,7 @@ public class TestRunner extends AbstractActor {
                             task.getFunctionName(), task.getTest().getParams()
                     ).toString(); // TODO: add timeout
 
-                    
+
                 })
                 .build();
     }
