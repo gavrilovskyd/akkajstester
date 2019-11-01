@@ -53,7 +53,7 @@ public class TesterRoutes extends AllDirectives {
                                           .withEntity("submition does not found");
                               } else {
                                   try {
-                                      Byte[] marshaled = mapper.writeValueAsBytes(parameter);
+                                      byte[] marshaled = mapper.writeValueAsBytes(parameter);
                                       resp.withStatus(StatusCodes.OK)
                                               .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
                                   } catch (JsonProcessingException e) {
