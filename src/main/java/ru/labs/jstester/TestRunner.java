@@ -15,7 +15,7 @@ public class TestRunner extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(Test.class, r -> {
-                    ScriptEngine engine new ScriptEngineManager().getEngineByName("nashorn");
+                    ScriptEngine engine = new ScriptEngineManager().getEngineByName(JS_ENGINE);
                 })
                 .build();
     }
