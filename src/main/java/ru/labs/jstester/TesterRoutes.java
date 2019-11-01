@@ -43,7 +43,7 @@ public class TesterRoutes extends AllDirectives {
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
                       .map(new Mapper<Object, HttpResponse>(){
                           @Override
-                          public HttpResponse apply(public Object parameter) {
+                          public HttpResponse apply(Object parameter) {
                               return super.apply(parameter);
                           }
                       });
