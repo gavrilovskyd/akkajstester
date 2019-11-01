@@ -24,7 +24,7 @@ public class RequestRouter extends AbstractActor {
                 .match(TestRequest.class, r -> {
                     for (Test test : r.getTests()) {
                         testRunnersPool.tell(
-                                new TestTask(r, test), getSelf());
+                                new TestTask(new TestMetaInfo(r.getPackageID(), r.getJsCode(), r.getFunctionName()), test), getSelf());
                     }
                 })
                 .match(ResultRequest.class, r -> {
