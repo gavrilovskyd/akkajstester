@@ -51,22 +51,22 @@ public class TesterRoutes extends AllDirectives {
                                       .withEntity("submit does not found");
                               return resp;
 
-                              ObjectMapper mapper = new ObjectMapper();
-                              if (parameter == null) {
-                                  resp.withStatus(StatusCodes.NOT_FOUND)
-                                          .withEntity("submit does not found");
-                              } else {
-                                  try {
-                                      byte[] marshaled = mapper.writeValueAsBytes(parameter);
-                                      resp.withStatus(StatusCodes.OK)
-                                              .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
-                                  } catch (JsonProcessingException e) {
-                                      resp.withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                              .withEntity("Unknown error");
-                                  }
-                              }
-
-                              return resp;
+                              //ObjectMapper mapper = new ObjectMapper();
+                              //if (parameter == null) {
+                              //    resp.withStatus(StatusCodes.NOT_FOUND)
+                              //            .withEntity("submit does not found");
+                              //} else {
+                              //    try {
+                              //        byte[] marshaled = mapper.writeValueAsBytes(parameter);
+                              //        resp.withStatus(StatusCodes.OK)
+                              //                .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
+                              //    } catch (JsonProcessingException e) {
+                              //        resp.withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
+                              //                .withEntity("Unknown error");
+                              //    }
+                              //}
+//
+                              //return resp;
                           }
                       }, system.dispatcher());
               return completeWithFutureResponse(possibleResponse);
