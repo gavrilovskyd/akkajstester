@@ -12,7 +12,7 @@ public class TestRunner extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TestTask.class, r -> {
+                .match(TestTask.class, task -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName(JS_ENGINE);
                     engine.eval()
                 })
