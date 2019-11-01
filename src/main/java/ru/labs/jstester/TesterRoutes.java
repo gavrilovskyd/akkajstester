@@ -12,6 +12,7 @@ import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import scala.concurrent.Future;
 
@@ -44,7 +45,7 @@ public class TesterRoutes extends AllDirectives {
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
                       .map(new Mapper<Object, HttpResponse>(){
                           @Override
-                          public HttpResponse apply(Object parameter) {
+                          public HttpResponse apply(Object parameter) throws JsonProcessingException {
                               HttpResponse resp = HttpResponse.create();
                               ObjectMapper mapper = new ObjectMapper();
                               if (parameter == null) {
