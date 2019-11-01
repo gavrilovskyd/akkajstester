@@ -26,6 +26,10 @@ public class ResultsStorage extends AbstractActor {
                 })
                 .match(ResultRequest.class, r -> {
                     List<TestResult> results = innerStorage.get(r.getPackageID());
+
+                    if (results == null) {
+                        getSender().tell(new TestResult[]);
+                    }
                 })
                 .build();
     }
