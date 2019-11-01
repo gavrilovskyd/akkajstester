@@ -25,7 +25,7 @@ public class TestTask {
         return functionName;
     }
 
-    public Test[] getTests() {
-        return tests;
+    public Test getTest() {
+        return test;
     }
 }
