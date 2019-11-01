@@ -54,7 +54,7 @@ public class TesterRoutes extends AllDirectives {
                                   resp.withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                           .withEntity("Unknown error");
                               } else if () {
-                            }else {
+                              }else {
                                   try {
                                       System.out.println(parameter);
                                       byte[] marshaled = mapper.writeValueAsBytes(parameter);
