@@ -23,8 +23,6 @@ public class ResultsStorage extends AbstractActor {
                     } else {
                         results.add(r);
                     }
-
-
                 })
                 .build();
     }
