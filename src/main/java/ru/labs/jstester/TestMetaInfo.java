@@ -1,7 +1,9 @@
 package ru.labs.jstester;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TestMetaInfo {
-    @Json
+    @JsonProperty("")
     private String packageID;
     private String jsCode;
     private String functionName;
