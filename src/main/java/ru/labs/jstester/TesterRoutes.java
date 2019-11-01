@@ -11,7 +11,7 @@ public class TesterRoutes extends AllDirectives {
                 path("submits", () ->
                         route(
                                 get(() ->
-                                        parameter("")),
+                                        parameter("package_id")),
                                 post(() -> { return complete("POST submits"); })
                         )
                 )
