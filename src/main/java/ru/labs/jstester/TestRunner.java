@@ -30,6 +30,7 @@ public class TestRunner extends AbstractActor {
                     String output = invocable.invokeFunction(
                             task.getMeta().getFunctionName(), task.getTest().getParams()
                     ).toString(); // TODO: add timeout
+                    System.out.println(output);
 
                     String status = (output.equals(task.getTest().getExpectedResult()) ?
                             TestResult.OK_STATUS : TestResult.WRONG_ANSWER_STATUS );
