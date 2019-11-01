@@ -20,5 +20,7 @@ public class JSTesterApp {
         HTTPServer server = new HTTPServer();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = server.createRoute().flow(system, materializer);
         http.bindAndHandle(routeFlow, ConnectHttp.toHost("localhost", 8080), materializer);
+
+        System.out.println("Server started at http://localhost:8080/");
     }
 }
