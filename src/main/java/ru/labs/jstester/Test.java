@@ -5,9 +5,9 @@ public class Test {
     private String expectedResult;
     private Object[] params;
 
-    public Test(String name, String expected, Object[] params) {
+    public Test(String name, String expectedResult, Object[] params) {
         this.testName = name;
-        this.expectedResult = expected;
+        this.expectedResult = expectedResult;
         this.params = params;
     }
 }
