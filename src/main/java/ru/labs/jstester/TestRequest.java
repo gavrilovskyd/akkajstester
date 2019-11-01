@@ -7,6 +7,13 @@ public class TestRequest {
     private String functionName;
     private Test[] tests;
 
+    public TestRequest() {
+        this.packageID = "";
+        this.jsCode = jsCode;
+        this.functionName = functionName;
+        this.tests = tests;
+    }
+
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
         //this.meta = new TestMetaInfo(packageID, jsCode, functionName);
         this.packageID = packageID;
