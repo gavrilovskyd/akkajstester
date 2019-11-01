@@ -10,4 +10,16 @@ public class TestMetaInfo {
         this.jsCode = jsCode;
         this.functionName = functionName;
     }
+
+    public String getPackageID() {
+        return packageID;
+    }
+
+    public String getJsCode() {
+        return jsCode;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
 }

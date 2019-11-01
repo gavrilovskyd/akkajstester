@@ -13,18 +13,6 @@ public class TestRequest {
         this.tests = tests;
     }
 
-    public String getPackageID() {
-        return packageID;
-    }
-
-    public String getJsCode() {
-        return jsCode;
-    }
-
-    public String getFunctionName() {
-        return functionName;
-    }
-
     public Test[] getTests() {
         return tests;
     }
