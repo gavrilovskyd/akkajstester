@@ -13,6 +13,7 @@ public class TesterRoutes extends AllDirectives {
                                 get(() -> { return complete("GET submits"); }),
                                 post(() -> { return complete("POST submits"); })
                         )
-        ));
+                )
+        );
     }
 }
