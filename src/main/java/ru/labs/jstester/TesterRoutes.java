@@ -25,7 +25,7 @@ public class TesterRoutes extends AllDirectives {
 
     private Route getSubmit(String packageID) {
         return get(()-> {
-            return complete(String.format("GET submits %s", packageID));
+            
         });
     }
 
