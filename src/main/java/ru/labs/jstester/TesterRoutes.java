@@ -59,19 +59,17 @@ public class TesterRoutes extends AllDirectives {
                                   return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
                                           .withEntity("Submit does not found");;
                               }
-                              
+
                               try {
                                   System.out.println(parameter);
                                   byte[] marshaled = mapper.writeValueAsBytes(parameter);
-                                  resp.withStatus(StatusCodes.OK)
+                                  return HttpResponse.create().withStatus(StatusCodes.OK)
                                           .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
                               } catch (JsonProcessingException e) {
-                                  resp.withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
+                                  return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                           .withEntity("Unknown error");
                               }
 
-
-                              return resp;
                           }
                       }, system.dispatcher());
               return completeWithFutureResponse(possibleResponse);
