@@ -45,6 +45,8 @@ public class TesterRoutes extends AllDirectives {
                           complete(StatusCodes.INTERNAL_SERVER_ERROR, failure.toString());
                       } else if (result == null) {
                           complete(StatusCodes.NOT_FOUND, "solution not found");
+                      } else {
+                          complete(StatusCodes.OK, result, Jackson.marshaller());
                       }
                   }
               }, system.dispatcher());
