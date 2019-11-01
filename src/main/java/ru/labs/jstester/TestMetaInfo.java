@@ -3,7 +3,7 @@ package ru.labs.jstester;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TestMetaInfo {
-    @JsonProperty("")
+    @JsonProperty("package_id")
     private String packageID;
     private String jsCode;
     private String functionName;
