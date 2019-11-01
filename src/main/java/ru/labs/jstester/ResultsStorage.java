@@ -15,7 +15,7 @@ public class ResultsStorage extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(TestResult.class, r -> {
                     List<TestResult> results = innerStorage.get(r.getTest().getPackageID());
-                    
+
                     if (results == null) {
                         results = new ArrayList<>();
                         results.add(r);
@@ -23,6 +23,9 @@ public class ResultsStorage extends AbstractActor {
                     } else {
                         results.add(r);
                     }
+                })
+                .match(ResultRequest.class, r -> {
+                    List<TestResult> results = innerStorage.get(r.getTest().getPackageID());
                 })
                 .build();
     }
