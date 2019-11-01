@@ -1,6 +1,7 @@
 package ru.labs.jstester;
 
 import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.StatusCode;
 import akka.http.javadsl.model.StatusCodes;
@@ -14,6 +15,7 @@ public class TesterRoutes extends AllDirectives {
     private int TIMEOUT_MS = 5000;
 
     private ActorRef requestRouter;
+    private ActorSystem system;
 
     public TesterRoutes(ActorRef requestRouter) {
         this.requestRouter = requestRouter;
