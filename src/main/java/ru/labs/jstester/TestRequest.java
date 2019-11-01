@@ -9,6 +9,10 @@ public class TestRequest {
         this.tests = tests;
     }
 
+    public TestMetaInfo getMeta() {
+        return meta;
+    }
+
     public Test[] getTests() {
         return tests;
     }
