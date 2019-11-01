@@ -6,7 +6,6 @@ import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletionStage;
@@ -33,7 +32,7 @@ public class TesterRoutes extends AllDirectives {
 
     private Route getSubmit(String packageID) {
         return get(()-> {
-             CompletionStage<Optional<List<TestResult>>> possibleResult = Patterns
+              Patterns
                      .ask(this.requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
     });
     }
