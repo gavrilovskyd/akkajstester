@@ -13,7 +13,7 @@ public class TestRequest extends TestMetaInfo {
     }
 
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
-        this.meta = new TestMetaInfo(packageID, jsCode, functionName);
+        super(packageID, jsCode, functionName);
         this.tests = tests;
     }
 
