@@ -18,6 +18,7 @@ public class ResultsStorage extends AbstractActor {
 
                     if (results == null) {
                         results = new ArrayList<>;
+                        results.add(r);
                         innerStorage.put(r.getTest().getPackageID(), results);
                     } else {
                         results
