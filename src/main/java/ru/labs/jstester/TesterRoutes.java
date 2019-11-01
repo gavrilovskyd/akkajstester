@@ -15,7 +15,7 @@ public class TesterRoutes extends AllDirectives {
                                             getSubmit(packageID)
                                         )
                                 ),
-                                post(() -> { return complete("POST submits"); })
+
                         )
                 )
         );
@@ -29,7 +29,9 @@ public class TesterRoutes extends AllDirectives {
 
     private Route postSubmit() {
         return pathEnd(() ->
-                route()
+                route(
+                        post(() -> { return complete("POST submits"); })
+                )
         )
     }
 }
