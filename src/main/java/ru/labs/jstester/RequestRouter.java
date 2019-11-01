@@ -3,13 +3,14 @@ package ru.labs.jstester;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 
 public class RequestRouter extends AbstractActor {
     private ActorRef resultStorage;
 
     public RequestRouter(ActorSystem system) {
-        system.actorOf()
+        system.actorOf(Props.create())
     }
 
     @Override
