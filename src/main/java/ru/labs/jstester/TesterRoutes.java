@@ -43,6 +43,8 @@ public class TesterRoutes extends AllDirectives {
                   public void onComplete(Throwable failure, Object result) {
                       if (failure != null) {
                           complete(StatusCodes.INTERNAL_SERVER_ERROR, failure.toString());
+                      } else if (result == null) {
+                          complete(StatusCodes.NOT_FOUND, "solution not found");
                       }
                   }
               }, system.dispatcher());
