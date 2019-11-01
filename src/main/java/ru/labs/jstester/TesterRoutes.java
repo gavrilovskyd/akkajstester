@@ -50,7 +50,7 @@ public class TesterRoutes extends AllDirectives {
                           public HttpResponse apply(Object parameter) {
                               if (!(parameter instanceof ArrayList<?>)) {
                                   return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                          .withEntity("Unknown error");
+                                          .withEntity("Unknown error instanceof");
                               }
 
                               ObjectMapper mapper = new ObjectMapper();
