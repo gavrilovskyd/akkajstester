@@ -8,4 +8,10 @@ public class TestResult {
     private Test test;
     private String actualResult;
     private String status;
+
+    public TestResult(Test test, String actualResult, String status) {
+        this.test = test;
+        this.actualResult = actualResult;
+        this.status = status;
+    }
 }
