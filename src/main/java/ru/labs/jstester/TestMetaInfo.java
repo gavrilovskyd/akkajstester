@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class TestMetaInfo {
     @JsonProperty("package_id")
     private String packageID;
+    @JsonProperty("js_code")
     private String jsCode;
     private String functionName;
 
