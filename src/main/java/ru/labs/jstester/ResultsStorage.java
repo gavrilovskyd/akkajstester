@@ -31,7 +31,7 @@ public class ResultsStorage extends AbstractActor {
                     if (results == null) {
                         getSender().tell(new TestResult[]{}, getSelf());
                     } else {
-                        getSender().tell(results.sort(Comparator.comparingInt(o -> o.getTest().getInnerID())), getSelf());
+                        getSender().tell(results.sort(Comparator.comparingInt(o -> o.getTest().getInnerID()));, getSelf());
                     }
                 })
                 .build();
