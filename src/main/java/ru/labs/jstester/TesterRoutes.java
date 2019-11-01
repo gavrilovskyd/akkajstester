@@ -6,8 +6,7 @@ import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akka.pattern.Patterns$;
-
-import java.util.concurrent.Future;
+import scala.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {
     private int TIMEOUT_MS = 5000;
