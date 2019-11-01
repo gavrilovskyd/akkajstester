@@ -54,6 +54,7 @@ public class TesterRoutes extends AllDirectives {
                                           .withEntity("submit does not found");
                               } else {
                                   try {
+                                      System.out.println(parameter);
                                       byte[] marshaled = mapper.writeValueAsBytes(parameter);
                                       resp.withStatus(StatusCodes.OK)
                                               .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
