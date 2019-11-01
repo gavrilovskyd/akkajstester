@@ -53,7 +53,8 @@ public class TesterRoutes extends AllDirectives {
                               if (!(parameter instanceof ArrayList<?>)) {
                                   resp.withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                           .withEntity("Unknown error");
-                              } else if () {
+                                  return resp;
+                              } else if (ArrayList<TestResult>) {
 
                               }else {
                                   try {
