@@ -23,7 +23,6 @@ public class TesterRoutes extends AllDirectives {
     public TesterRoutes(ActorSystem system, ActorRef requestRouter) {
         this.system = system;
         this.requestRouter = requestRouter;
-        PropertyNamingStrategy.SNAKE_CASE;
     }
 
     public Route routes() {
