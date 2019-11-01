@@ -9,7 +9,7 @@ public class RequestRouter extends AbstractActor {
     private ActorRef resultStorage;
 
     public RequestRouter(ActorSystem system) {
-        
+        system.actorOf()
     }
 
     @Override
