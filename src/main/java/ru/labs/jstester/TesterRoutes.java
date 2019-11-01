@@ -57,7 +57,7 @@ public class TesterRoutes extends AllDirectives {
                               ArrayList<TestResult>results = ((ArrayList<TestResult>)parameter);
                               if (results.size() == 0) {
                                   return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
-                                          .withEntity("Submit does not found");;
+                                          .withEntity("Submit does not found");
                               }
 
                               try {
