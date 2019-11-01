@@ -12,7 +12,7 @@ public class TesterRoutes extends AllDirectives {
                 path("submits", () ->
                         route(
                                 path(PathMatchers.segment(), packageID -> route(
-                                        get(())
+                                        get(() -> { return complete(String.format("GET submits %s", packageID)); })
                                         )
                                 ),
                                 post(() -> { return complete("POST submits"); })
