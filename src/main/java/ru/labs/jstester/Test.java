@@ -1,22 +1,16 @@
 package ru.labs.jstester;
 
 public class Test {
-    
     private String packageID;
     private String testName;
     private String expectedResult;
     private Object[] params;
 
-    public Test(int innerID, String packageID, String name, String expectedResult, Object[] params) {
-        this.innerID = innerID;
+    public Test(String packageID, String name, String expectedResult, Object[] params) {
         this.packageID = packageID;
         this.testName = name;
         this.expectedResult = expectedResult;
         this.params = params;
-    }
-
-    public int getInnerID() {
-        return innerID;
     }
 
     public String getPackageID() {
