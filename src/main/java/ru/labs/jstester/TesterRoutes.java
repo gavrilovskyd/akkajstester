@@ -40,8 +40,8 @@ public class TesterRoutes extends AllDirectives {
         return get(()-> {
               Future<Object> possibleResult = Patterns
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
-                      .map(new Mapper<Object>);
-              completeWith
+                      .map(new Mapper<Object, >);
+              completeWi
 
     });
     }
