@@ -50,7 +50,7 @@ public class TesterRoutes extends AllDirectives {
                           public HttpResponse apply(Object parameter) {
                               HttpResponse resp = HttpResponse.create();
                               ObjectMapper mapper = new ObjectMapper();
-                              if (parameter instanceof ArrayList<?>) {
+                              if (!(parameter instanceof ArrayList<?>)) {
                                   resp.withStatus(StatusCodes.NOT_FOUND)
                                           .withEntity("submit does not found");
                               } else {
