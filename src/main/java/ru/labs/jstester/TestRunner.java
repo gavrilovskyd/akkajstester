@@ -29,7 +29,8 @@ public class TestRunner extends AbstractActor {
                             task.getFunctionName(), task.getTest().getParams()
                     ).toString(); // TODO: add timeout
 
-                    String status = ( output.equals(task.getTest().getExpectedResult()) ? TestResult.OK_STATUS : TestResult.WRONG_ANSWER_STATUS );
+                    String status = (output.equals(task.getTest().getExpectedResult()) ?
+                            TestResult.OK_STATUS : TestResult.WRONG_ANSWER_STATUS );
 
                     this.resultStorage.tell(new TestResult(task.getTest(), output));
                 })
