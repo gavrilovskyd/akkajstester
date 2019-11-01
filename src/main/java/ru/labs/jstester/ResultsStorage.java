@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class ResultsStorage extends AbstractActor {
                     if (results == null) {
                         getSender().tell(new TestResult[]{}, getSelf());
                     } else {
-                        getSender().tell(results.sort((o1, o2) -> o1.getTest().getInnerID() - o2.getTest().getInnerID()););
+                        getSender().tell(results.sort(Comparator.comparingInt(o -> o.getTest().getInnerID())););
                     }
                 })
                 .build();
