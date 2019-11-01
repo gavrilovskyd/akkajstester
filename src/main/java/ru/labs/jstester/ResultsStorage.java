@@ -28,7 +28,7 @@ public class ResultsStorage extends AbstractActor {
                     List<TestResult> results = innerStorage.get(r.getPackageID());
 
                     if (results == null) {
-                        getSender().tell(new TestResult[]);
+                        getSender().tell(new TestResult[], getSelf());
                     }
                 })
                 .build();
