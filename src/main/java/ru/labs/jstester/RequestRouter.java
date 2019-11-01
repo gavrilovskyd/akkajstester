@@ -11,7 +11,7 @@ public class RequestRouter extends AbstractActor {
     private ActorRef resultStorage;
 
     public RequestRouter() {
-        this.resultStorage = system.actorOf(Props.create(ResultsStorage.class), "result-storage");
+        this.resultStorage = getContext().actorOf(Props.create(ResultsStorage.class), "result-storage");
 
         system.actorOf(
                 new BalancingPool()
