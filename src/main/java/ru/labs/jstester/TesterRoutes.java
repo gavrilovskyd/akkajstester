@@ -61,7 +61,7 @@ public class TesterRoutes extends AllDirectives {
                                           .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
                               } catch (JsonProcessingException e) {
                                   return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                          .withEntity("Woooops!!!");
+                                          .withEntity("Wooops!!!");
                               }
 
                           }
