@@ -46,7 +46,7 @@ public class TesterRoutes extends AllDirectives {
                           public HttpResponse apply(Object parameter) {
 
                           }
-                      });
+                      }, system.dispatcher());
               completeWith
 
     });
