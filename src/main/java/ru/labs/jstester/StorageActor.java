@@ -30,7 +30,7 @@ public class StorageActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class, m -> {
-                    
+                    storage.put(m.getKey(), m.getValue());
                 })
                 .build();
     }
