@@ -2,12 +2,13 @@ package ru.labs.jstester;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
 import akka.japi.pf.ReceiveBuilder;
 
 public class RequestRouter extends AbstractActor {
     private ActorRef resultStorage;
 
-    public RequestRouter(ActorRef resultStorage) {
+    public RequestRouter(ActorSystem resultStorage) {
         this.resultStorage = resultStorage;
     }
 
