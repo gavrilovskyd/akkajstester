@@ -8,7 +8,7 @@ public class TestRequest extends TestMetaInfo {
     private Test[] tests;
 
     public TestRequest() {
-        this.meta = new TestMetaInfo();
+        super();
         this.tests = new Test[]{};
     }
 
