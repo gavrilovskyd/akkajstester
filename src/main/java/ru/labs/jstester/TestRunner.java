@@ -1,4 +1,6 @@
 package ru.labs.jstester;
 
-public class TestRunner {
+import akka.actor.AbstractActor;
+
+public class TestRunner extends AbstractActor {
 }
