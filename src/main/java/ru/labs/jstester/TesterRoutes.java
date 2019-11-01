@@ -36,7 +36,7 @@ public class TesterRoutes extends AllDirectives {
         return get(()-> {
               Future<Object> possibleResult = Patterns.ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
               possibleResult.onComplete((Object failure, Object val) -> {
-
+                return;
               }, system.dispatcher());
     });
     }
