@@ -4,7 +4,7 @@ import akka.actor.ActorRef;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
-import akka.pattern.Patterns;
+
 import java.util.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {
