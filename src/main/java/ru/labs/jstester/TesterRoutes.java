@@ -40,7 +40,9 @@ public class TesterRoutes extends AllDirectives {
               Future<Object> possibleResult = Patterns.ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
               possibleResult.onComplete(new OnComplete<Object>() {
                   @Override
-                  public void onComplete(Throwable failure, )
+                  public void onComplete(Throwable failure, Object result) {
+                      
+                  }
               }, system.dispatcher());
     });
     }
