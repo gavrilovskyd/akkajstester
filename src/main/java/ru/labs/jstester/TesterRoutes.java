@@ -54,7 +54,7 @@ public class TesterRoutes extends AllDirectives {
                               }
 
                               ObjectMapper mapper = new ObjectMapper();
-                              ArrayList<TestResult>results = ((ArrayList<TestResult>))
+                              ArrayList<TestResult>results = ((ArrayList<TestResult>)parameter);
 
                               }else {
                                   try {
