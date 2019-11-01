@@ -7,9 +7,7 @@ import akka.dispatch.Mapper;
 import akka.dispatch.OnComplete;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.marshallers.jackson.Jackson;
-import akka.http.javadsl.model.HttpResponse;
-import akka.http.javadsl.model.StatusCode;
-import akka.http.javadsl.model.StatusCodes;
+import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
@@ -52,7 +50,7 @@ public class TesterRoutes extends AllDirectives {
                                           .withEntity("submition does not found");
                               } else {
                                   resp.withStatus(StatusCodes.OK)
-                                          .withEntity(Jackson.marshaller())
+                                          .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, ))
                               }
 
 
