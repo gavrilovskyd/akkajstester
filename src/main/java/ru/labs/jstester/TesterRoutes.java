@@ -55,9 +55,11 @@ public class TesterRoutes extends AllDirectives {
 
                               ObjectMapper mapper = new ObjectMapper();
                               ArrayList<TestResult>results = ((ArrayList<TestResult>)parameter);
-                              results.
+                              if (results.size() == 0) {
+                                  return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
+                                          .withEntity("Unknown error");;
 
-                              }else {
+                              } else {
                                   try {
                                       System.out.println(parameter);
                                       byte[] marshaled = mapper.writeValueAsBytes(parameter);
