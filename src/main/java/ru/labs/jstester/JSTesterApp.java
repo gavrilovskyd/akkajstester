@@ -8,8 +8,6 @@ public class JSTesterApp {
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("testing-system");
 
-        ActorRef storageActor = system.actorOf(Props.create(StorageActor.class), "storage-actor");
-        storageActor.tell(new StorageActor.StoreMessage("hello", "world"), ActorRef.noSender());
-        // TODO: stop all
+       
     }
 }
