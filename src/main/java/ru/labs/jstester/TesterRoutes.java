@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.concurrent.CompletionStage;
 
 public class TesterRoutes extends AllDirectives {
-    private int TIMOUT = 5000;
+    private int TIMEOUT_MS = 5000;
 
     private ActorRef requestRouter;
 
