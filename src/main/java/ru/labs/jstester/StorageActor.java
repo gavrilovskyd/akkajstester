@@ -1,4 +1,4 @@
 package ru.labs.jstester;
 
-public class StorageActor {
+public class StorageActor extends  {
 }
