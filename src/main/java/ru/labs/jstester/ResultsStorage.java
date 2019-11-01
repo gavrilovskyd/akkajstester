@@ -5,7 +5,7 @@ import akka.japi.pf.ReceiveBuilder;
 
 import java.util.HashMap;
 
-public class StorageActor extends AbstractActor {
+public class ResultsStorage extends AbstractActor {
     private HashMap<String, String> storage = new HashMap<>();
 
     public static final class StoreMessage {
