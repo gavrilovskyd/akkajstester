@@ -10,8 +10,7 @@ public class HTTPServer {
 
     public HTTPServer(ActorSystem system) {
         system.actorOf(Props.create(RequestRouter.class), "request-router");
-
-        testerRoutes = new TesterRoutes(requestRouter);
+        this.testerRoutes = new TesterRoutes(requestRouter);
     }
 
     public Route createRoute() {
