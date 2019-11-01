@@ -3,7 +3,7 @@ package ru.labs.jstester;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
-@JsonNaming(PropertyNamingStrategy.SNAKE_CASE)
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class TestMetaInfo {
     private String packageID;
     private String jsCode;
