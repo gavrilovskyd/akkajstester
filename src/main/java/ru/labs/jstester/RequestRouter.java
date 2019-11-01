@@ -22,8 +22,6 @@ public class RequestRouter extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TestRequest.class, r -> {
-                    System.out.println(r.getPackageID());
-
                     for (Test test : r.getTests()) {
                         testRunnersPool.tell(
                                 new TestTask(new TestMetaInfo(r.getPackageID(), r.getJsCode(), r.getFunctionName()), test), getSelf());
