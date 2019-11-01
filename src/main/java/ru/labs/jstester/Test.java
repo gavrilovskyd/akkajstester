@@ -13,6 +13,10 @@ public class Test {
         this.params = params;
     }
 
+    public int getInnerID() {
+        return innerID;
+    }
+
     public String getTestName() {
         return testName;
     }
