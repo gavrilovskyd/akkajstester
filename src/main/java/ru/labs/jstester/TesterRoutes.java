@@ -50,7 +50,7 @@ public class TesterRoutes extends AllDirectives {
                               ObjectMapper mapper = new ObjectMapper();
                               if (parameter == null) {
                                   resp.withStatus(StatusCodes.NOT_FOUND)
-                                          .withEntity("submition does not found");
+                                          .withEntity("submit does not found");
                               } else {
                                   try {
                                       byte[] marshaled = mapper.writeValueAsBytes(parameter);
