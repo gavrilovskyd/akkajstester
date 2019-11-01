@@ -25,7 +25,7 @@ public class ResultsStorage extends AbstractActor {
                     }
                 })
                 .match(ResultRequest.class, r -> {
-                    List<TestResult> results = innerStorage.get(r.getTest().getPackageID());
+                    List<TestResult> results = innerStorage.get(r.getPackageID());
                 })
                 .build();
     }
