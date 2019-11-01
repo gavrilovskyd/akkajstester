@@ -4,8 +4,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class TestRequest {
-    private TestMetaInfo meta;
+public class TestRequest extends TestMetaInfo {
     private Test[] tests;
 
     public TestRequest() {
