@@ -1,7 +1,7 @@
 package ru.labs.jstester;
 
 public class Test {
-    private int innerID;
+    
     private String packageID;
     private String testName;
     private String expectedResult;
