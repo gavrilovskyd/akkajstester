@@ -9,7 +9,7 @@ public class TestRequest {
     private Test[] tests;
 
     public TestRequest() {
-        this.meta = new TestMetaInfo("", "", "");
+        this.meta = new TestMetaInfo();
         this.tests = new Test[]{};
     }
 
