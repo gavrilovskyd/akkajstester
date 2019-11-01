@@ -8,7 +8,7 @@ import akka.japi.pf.ReceiveBuilder;
 public class RequestRouter extends AbstractActor {
     private ActorRef resultStorage;
 
-    public RequestRouter(ActorSystem resultStorage) {
+    public RequestRouter(ActorSystem system) {
         this.resultStorage = resultStorage;
     }
 
