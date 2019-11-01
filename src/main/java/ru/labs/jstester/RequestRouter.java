@@ -10,7 +10,7 @@ import akka.routing.BalancingPool;
 public class RequestRouter extends AbstractActor {
     private ActorRef resultStorage;
 
-    public RequestRouter(ActorSystem system) {
+    public RequestRouter() {
         this.resultStorage = system.actorOf(Props.create(ResultsStorage.class), "result-storage");
 
         system.actorOf(
