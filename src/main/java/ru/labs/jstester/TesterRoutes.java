@@ -32,7 +32,7 @@ public class TesterRoutes extends AllDirectives {
 
     private Route getSubmit(String packageID) {
         return get(()-> {
-              Future<Object> possibleResult = Patterns.ask(this.requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
+              Future<Object> possibleResult = Patterns.ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
               return completeOKWithFuture(possibleResult, Jackson.marshaller());
     });
     }
@@ -42,7 +42,7 @@ public class TesterRoutes extends AllDirectives {
                 route(
                         post(() ->
                                 entity(Jackson.unmarshaller(TestRequest.class), r -> {
-                                    this.requestRouter.tell(r, ActorRef.noSender());
+                                    requestRouter.tell(r, ActorRef.noSender());
                                     return complete(StatusCodes.OK, "Tests started!");
                                 }))
                 )
