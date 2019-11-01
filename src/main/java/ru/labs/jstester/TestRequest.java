@@ -17,10 +17,6 @@ public class TestRequest extends TestMetaInfo {
         this.tests = tests;
     }
 
-    public TestMetaInfo getMeta() {
-        return meta;
-    }
-
     public Test[] getTests() {
         return tests;
     }
