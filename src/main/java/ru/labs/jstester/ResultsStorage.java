@@ -21,7 +21,7 @@ public class ResultsStorage extends AbstractActor {
                         results.add(r);
                         innerStorage.put(r.getTest().getPackageID(), results);
                     } else {
-                        results
+                        results.add(r)
                     }
 
 
