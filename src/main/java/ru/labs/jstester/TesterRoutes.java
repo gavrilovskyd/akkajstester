@@ -43,7 +43,7 @@ public class TesterRoutes extends AllDirectives {
         return get(()-> {
               Future<HttpResponse> possibleResponse = Patterns
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
-                      .map(new Mapper<Object, HttpResponse>(){
+                      .map(new Mapper<List<TestResult>, HttpResponse>(){
                           @Override
                           public HttpResponse apply(List<TestResult> parameter) {
                               HttpResponse resp = HttpResponse.create();
