@@ -32,7 +32,7 @@ public class TestRunner extends AbstractActor {
                     String status = (output.equals(task.getTest().getExpectedResult()) ?
                             TestResult.OK_STATUS : TestResult.WRONG_ANSWER_STATUS );
 
-                    this.resultStorage.tell(new TestResult(task.getTest(), output));
+                    this.resultStorage.tell(new TestResult(task.getTest(), output, status));
                 })
                 .build();
     }
