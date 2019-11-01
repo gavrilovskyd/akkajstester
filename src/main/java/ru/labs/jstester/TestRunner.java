@@ -29,7 +29,7 @@ public class TestRunner extends AbstractActor {
                             task.getFunctionName(), task.getTest().getParams()
                     ).toString(); // TODO: add timeout
 
-
+                    this.resultStorage.tell(new TestResult(task.getTest(), ));
                 })
                 .build();
     }
