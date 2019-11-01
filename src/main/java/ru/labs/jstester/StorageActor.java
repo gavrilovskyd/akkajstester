@@ -12,6 +12,11 @@ public class StorageActor extends AbstractActor {
         private String key;
         private String value;
 
+        public StoreMessage(String k, String v) {
+            this.key = k;
+            this.value = v;
+        }
+
         public String getKey() {
             return key;
         }
