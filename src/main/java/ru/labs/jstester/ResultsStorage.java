@@ -11,7 +11,7 @@ public class ResultsStorage extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(StoreMessage.class, m -> {
+                .match(TestResult.class, m -> {
                     storage.put(m.getKey(), m.getValue());
                     System.out.println(String.format("message: K: %s, V: %s", m.getKey(), m.getValue()));
                 })
