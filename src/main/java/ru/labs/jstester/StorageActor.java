@@ -19,6 +19,8 @@ public class StorageActor extends AbstractActor {
         public String getValue() {
             return value;
         }
+
+        
     }
 
     @Override
