@@ -1,6 +1,7 @@
 package ru.labs.jstester;
 
 public class TestMetaInfo {
+    @Json
     private String packageID;
     private String jsCode;
     private String functionName;
