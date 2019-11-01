@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class ResultsStorage extends AbstractActor {
     private HashMap<String, List<TestResult>> innerStorage = new HashMap<>();
