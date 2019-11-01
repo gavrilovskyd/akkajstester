@@ -6,7 +6,7 @@ import akka.japi.pf.ReceiveBuilder;
 import java.util.HashMap;
 
 public class ResultsStorage extends AbstractActor {
-    private HashMap<String, TestResult[]> storage = new HashMap<>();
+    private HashMap<String, TestResult[]> innerStorage = new HashMap<>();
 
     public static final class StoreMessage {
         private String key;
