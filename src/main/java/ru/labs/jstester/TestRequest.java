@@ -12,7 +12,10 @@ public class TestRequest {
     private Test[] tests;
 
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
-        this.meta = new TestMetaInfo(packageID, jsCode, functionName);
+        //this.meta = new TestMetaInfo(packageID, jsCode, functionName);
+        his.packageID = packageID;
+        this.jsCode = jsCode;
+        this.functionName = functionName;
         this.tests = tests;
     }
 
