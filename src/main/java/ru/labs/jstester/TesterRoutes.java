@@ -24,7 +24,8 @@ public class TesterRoutes extends AllDirectives {
     private ActorRef requestRouter;
     private ActorSystem system;
 
-    public TesterRoutes(ActorRef requestRouter) {
+    public TesterRoutes(ActorSystem system, ActorRef requestRouter) {
+        this.system = system;
         this.requestRouter = requestRouter;
     }
 
