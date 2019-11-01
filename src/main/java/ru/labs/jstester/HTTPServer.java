@@ -5,7 +5,6 @@ import akka.http.javadsl.server.Route;
 public class HTTPServer {
     private TesterRoutes testerRoutes;
 
-
     public HTTPServer() {
         testerRoutes = new TesterRoutes();
     }
