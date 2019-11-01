@@ -5,9 +5,7 @@ public class TestTask {
     private Test test;
 
     public TestTask(TestMetaInfo meta, Test test) {
-        this.packageID = packageID;
-        this.jsCode = jsCode;
-        this.functionName = functionName;
+        this.meta = meta;
         this.test = test;
     }
 
