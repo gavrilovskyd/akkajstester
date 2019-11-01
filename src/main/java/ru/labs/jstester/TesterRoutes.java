@@ -2,6 +2,7 @@ package ru.labs.jstester;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.dispatch.OnComplete;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.StatusCode;
 import akka.http.javadsl.model.StatusCodes;
@@ -34,8 +35,11 @@ public class TesterRoutes extends AllDirectives {
 
     private Route getSubmit(String packageID) {
         return get(()-> {
-              Future<Object> possibleResult = Patterns.ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
-              possibleResult.onComplete((Object failure, Object val) -> {}, system.dispatcher());
+              Future<List<TestResult>> possibleResult = Patterns.ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS);
+              possibleResult.onComplete(new OnComplete<Object>() {
+                  @Override
+                  public void onComplete(Throwable failure, )
+              }, system.dispatcher());
     });
     }
 
