@@ -3,4 +3,5 @@ package ru.labs.jstester;
 public class Test {
     private String testName;
     private String expectedResult;
+    private Object[] params;
 }
