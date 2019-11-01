@@ -22,7 +22,8 @@ public class JSTesterApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         HTTPServer server = new HTTPServer();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = server.createRoute().flow(system, materializer);
-        final CompletionStage<ServerBinding> binding =  http.bindAndHandle(routeFlow, ConnectHttp.toHost("localhost", 8080), materializer);
+        final CompletionStage<ServerBinding> binding =  http.bindAndHandle(
+                routeFlow, ConnectHttp.toHost("localhost", 8080), materializer);
 
         System.out.println("Server started at http://localhost:8080/");
         System.in.read();
