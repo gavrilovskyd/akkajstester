@@ -12,7 +12,6 @@ public class JSTesterApp {
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-
         
     }
 }
