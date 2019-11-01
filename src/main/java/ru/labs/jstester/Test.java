@@ -19,6 +19,10 @@ public class Test {
         return innerID;
     }
 
+    public String getPackageID() {
+        return packageID;
+    }
+
     public String getTestName() {
         return testName;
     }
