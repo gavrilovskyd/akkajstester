@@ -9,6 +9,12 @@ public class TestMetaInfo {
     private String jsCode;
     private String functionName;
 
+    public TestMetaInfo() {
+        this.packageID = "";
+        this.jsCode = "";
+        this.functionName = "";
+    }
+
     public TestMetaInfo(String packageID, String jsCode, String functionName) {
         this.packageID = packageID;
         this.jsCode = jsCode;
