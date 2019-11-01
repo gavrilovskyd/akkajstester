@@ -58,7 +58,7 @@ public class TesterRoutes extends AllDirectives {
                                               .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
                                   } catch (JsonProcessingException e) {
                                       resp.withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                              .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
+                                              .withEntity("Unknown error"));
                                   }
 
                               }
