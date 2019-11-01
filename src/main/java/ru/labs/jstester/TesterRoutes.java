@@ -11,6 +11,7 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import scala.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {
@@ -22,6 +23,7 @@ public class TesterRoutes extends AllDirectives {
     public TesterRoutes(ActorSystem system, ActorRef requestRouter) {
         this.system = system;
         this.requestRouter = requestRouter;
+        PropertyNamingStrategy.SNAKE_CASE;
     }
 
     public Route routes() {
