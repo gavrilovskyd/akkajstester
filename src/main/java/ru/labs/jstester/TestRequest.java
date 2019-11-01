@@ -8,12 +8,8 @@ public class TestRequest extends TestMetaInfo {
     private Test[] tests;
 
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
-        this.meta = new TestMetaInfo(packageID, jsCode, functionName);
+        super(packageID, jsCode, functionName);
         this.tests = tests;
-    }
-
-    public TestMetaInfo getMeta() {
-        return meta;
     }
 
     public Test[] getTests() {
