@@ -9,16 +9,8 @@ public class TestTask {
         this.test = test;
     }
 
-    public String getPackageID() {
-        return packageID;
-    }
-
-    public String getJsCode() {
-        return jsCode;
-    }
-
-    public String getFunctionName() {
-        return functionName;
+    public TestMetaInfo getMeta() {
+        return meta;
     }
 
     public Test getTest() {
