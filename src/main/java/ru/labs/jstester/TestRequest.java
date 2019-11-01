@@ -11,7 +11,7 @@ public class TestRequest {
         this.packageID = "";
         this.jsCode = "";
         this.functionName = "";
-        this.tests = Test[]{};
+        this.tests = new Test[]{};
     }
 
     public TestRequest(String packageID, String jsCode, String functionName, Test[] tests) {
