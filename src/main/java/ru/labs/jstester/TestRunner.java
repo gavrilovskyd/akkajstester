@@ -17,8 +17,9 @@ public class TestRunner extends AbstractActor {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName(JS_ENGINE);
                     engine.eval(task.getJsCode());
                     Invocable invocable = (Invocable)engine;
-                    String output =
-                            invocable.invokeFunction(task.getFunctionName(), task.getTest().getParams()).toString(); // TODO: add timeout
+                    String output = invocable.invokeFunction(
+                            task.getFunctionName(), task.getTest().getParams()
+                    ).toString(); // TODO: add timeout
                 })
                 .build();
     }
