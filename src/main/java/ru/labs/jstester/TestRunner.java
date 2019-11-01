@@ -10,8 +10,8 @@ public class TestRunner extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TestTask.class, r -> {
-                    
+                .match(Test.class, r -> {
+
                 })
                 .build();
     }
