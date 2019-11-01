@@ -6,6 +6,6 @@ public class TestMetaInfo {
     private String functionName;
 
     public TestMetaInfo(String packageID, String jsCode, String functionName) {
-        
+
     }
 }
