@@ -13,6 +13,8 @@ import ru.labs.jstester.messages.TestRequest;
 import ru.labs.jstester.messages.TestTask;
 
 public class RequestRouterActor extends AbstractActor {
+    private final static int TESTERS_BALANCER_POOL_SIZE = 5;
+
     private ActorRef resultStorage;
     private ActorRef testRunnersPool;
     private LoggingAdapter logger = Logging.getLogger(getContext().getSystem(), this);
