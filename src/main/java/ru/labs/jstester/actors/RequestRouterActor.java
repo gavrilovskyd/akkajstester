@@ -37,6 +37,8 @@ public class RequestRouterActor extends AbstractActor {
                     }
                 })
                 .match(ResultRequest.class, r -> {
+                    logger.info("got result request with package_id: {}", r.getPackageID());
+
                     resultStorage.forward(r, getContext());
                 }).matchAny(o -> { logger.warning("got unknown message: {}", o.getClass().toString()); })
                 .build();
