@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import ru.labs.jstester.messages.ResultRequest;
 import ru.labs.jstester.messages.TestRequest;
 import ru.labs.jstester.messages.TestResult;
-import ru.labs.jstester.messages.TextResponseMessage;
+import ru.labs.jstester.messages.TextResponse;
 import scala.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {
@@ -61,7 +61,7 @@ public class TesterRoutes extends AllDirectives {
                                                       HttpEntities.create(
                                                               ContentTypes.APPLICATION_JSON,
                                                               mapper.writeValueAsBytes(
-                                                                      new TextResponseMessage("Wooops!!!")
+                                                                      new TextResponse("Wooops!!!")
                                                               )
                                                       )
                                               );
@@ -76,7 +76,7 @@ public class TesterRoutes extends AllDirectives {
                                                       HttpEntities.create(
                                                               ContentTypes.APPLICATION_JSON,
                                                               mapper.writeValueAsBytes(
-                                                                      new TextResponseMessage("Submit does not exist")
+                                                                      new TextResponse("Submit does not exist")
                                                               )
                                                       )
                                               );
@@ -110,7 +110,7 @@ public class TesterRoutes extends AllDirectives {
                                     requestRouter.tell(r, ActorRef.noSender());
                                     return complete(
                                             StatusCodes.CREATED,
-                                            new TextResponseMessage("Tests started!"),
+                                            new TextResponse("Tests started!"),
                                             Jackson.marshaller()
                                     );
                                 }))
