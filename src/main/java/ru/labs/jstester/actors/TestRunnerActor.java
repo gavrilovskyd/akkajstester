@@ -5,7 +5,7 @@ import akka.actor.ActorRef;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
-import ru.labs.jstester.messages.HttpResponse.TestResult;
+import ru.labs.jstester.messages.HttpResponse.TestResultResponse;
 import ru.labs.jstester.messages.TestTask;
 
 import javax.script.Invocable;
@@ -39,13 +39,13 @@ public class TestRunnerActor extends AbstractActor {
                         ).toString();
 
                         status = (output.equals(task.getTest().getExpectedResult()) ?
-                                TestResult.OK_STATUS : TestResult.WRONG_ANSWER_STATUS );
+                                TestResultResponse.OK_STATUS : TestResultResponse.WRONG_ANSWER_STATUS );
                     } catch (ScriptException e) {
                         output = e.getMessage();
-                        status = TestResult.RUNTIME_ERROR_STATUS;
+                        status = TestResultResponse.RUNTIME_ERROR_STATUS;
                     }
 
-                    resultStorage.tell(new TestResult(task.getTest(), output, status), getSelf());
+                    resultStorage.tell(new TestResultResponse(task.getTest(), output, status), getSelf());
                 })
                 .matchAny(o -> { logger.warning("got unknown message: {}", o.getClass().toString()); })
                 .build();

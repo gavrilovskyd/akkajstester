@@ -15,7 +15,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ru.labs.jstester.messages.HttpRequests.ResultRequest;
 import ru.labs.jstester.messages.HttpRequests.TestRequest;
-import ru.labs.jstester.messages.HttpResponse.TestResult;
+import ru.labs.jstester.messages.HttpResponse.TestResultResponse;
 import ru.labs.jstester.messages.HttpResponse.TextResponse;
 import scala.concurrent.Future;
 
@@ -52,7 +52,7 @@ public class TesterRoutes extends AllDirectives {
                           public HttpResponse apply(Object parameter) {
                               ObjectMapper mapper = new ObjectMapper();
                               try {
-                                  if (!(parameter instanceof TestResult[])) {
+                                  if (!(parameter instanceof TestResultResponse[])) {
                                       logger.error("wrong future parameter {}, expected TestResult[]",
                                               parameter.getClass().toString());
                                       return HttpResponse.create()
@@ -67,7 +67,7 @@ public class TesterRoutes extends AllDirectives {
                                               );
                                   }
 
-                                  TestResult[] results = ((TestResult[]) parameter);
+                                  TestResultResponse[] results = ((TestResultResponse[]) parameter);
                                   if (results.length == 0) {
                                       logger.warning("submit {} does not exist", packageID);
                                       return HttpResponse.create()

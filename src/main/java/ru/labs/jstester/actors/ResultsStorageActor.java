@@ -5,21 +5,21 @@ import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import ru.labs.jstester.messages.HttpRequests.ResultRequest;
-import ru.labs.jstester.messages.HttpResponse.TestResult;
+import ru.labs.jstester.messages.HttpResponse.TestResultResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class ResultsStorageActor extends AbstractActor {
-    private HashMap<String, List<TestResult>> innerStorage = new HashMap<>();
+    private HashMap<String, List<TestResultResponse>> innerStorage = new HashMap<>();
     private LoggingAdapter logger = Logging.getLogger(getContext().getSystem(), this);
 
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TestResult.class, r -> {
-                    List<TestResult> results = innerStorage.get(r.getTest().getPackageID());
+                .match(TestResultResponse.class, r -> {
+                    List<TestResultResponse> results = innerStorage.get(r.getTest().getPackageID());
 
                     if (results == null) {
                         results = new ArrayList<>();
@@ -30,12 +30,12 @@ public class ResultsStorageActor extends AbstractActor {
                     }
                 })
                 .match(ResultRequest.class, r -> {
-                    List<TestResult> results = innerStorage.get(r.getPackageID());
+                    List<TestResultResponse> results = innerStorage.get(r.getPackageID());
 
                     if (results == null) {
-                        getSender().tell(new TestResult[]{}, getSelf());
+                        getSender().tell(new TestResultResponse[]{}, getSelf());
                     } else {
-                        getSender().tell(results.toArray(new TestResult[0]), getSelf());
+                        getSender().tell(results.toArray(new TestResultResponse[0]), getSelf());
                     }
                 })
                 .matchAny(o -> { logger.warning("got unknown message: {}", o.getClass().toString()); })

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import ru.labs.jstester.messages.Test;
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class TestResult {
+public class TestResultResponse {
     public static final String OK_STATUS = "OK";
     public static final String WRONG_ANSWER_STATUS = "WA";
     public static final String RUNTIME_ERROR_STATUS = "RE";
@@ -14,7 +14,7 @@ public class TestResult {
     private String actualResult;
     private String status;
 
-    public TestResult(Test test, String actualResult, String status) {
+    public TestResultResponse(Test test, String actualResult, String status) {
         this.test = test;
         this.actualResult = actualResult;
         this.status = status;
