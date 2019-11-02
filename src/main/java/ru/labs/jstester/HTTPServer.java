@@ -4,6 +4,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.server.Route;
+import ru.labs.jstester.actors.RequestRouterActor;
 
 public class HTTPServer {
     private TesterRoutes testerRoutes;
