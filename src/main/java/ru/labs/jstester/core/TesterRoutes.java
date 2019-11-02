@@ -110,7 +110,7 @@ public class TesterRoutes extends AllDirectives {
                                     requestRouter.tell(r, ActorRef.noSender());
                                     return complete(
                                             StatusCodes.CREATED,
-                                            new TextResponse("Tests started!"),
+                                            new TextResponse("submit accepted!"),
                                             Jackson.marshaller()
                                     );
                                 }))
