@@ -13,6 +13,9 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ru.labs.jstester.messages.ResultRequest;
+import ru.labs.jstester.messages.TestRequest;
+import ru.labs.jstester.messages.TestResult;
 import scala.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {

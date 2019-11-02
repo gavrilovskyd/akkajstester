@@ -1,4 +1,4 @@
-package ru.labs.jstester;
+package ru.labs.jstester.messages;
 
 public class ResultRequest {
     private String packageID;

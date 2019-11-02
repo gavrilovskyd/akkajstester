@@ -4,6 +4,8 @@ import akka.actor.AbstractActor;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
+import ru.labs.jstester.messages.ResultRequest;
+import ru.labs.jstester.messages.TestResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
