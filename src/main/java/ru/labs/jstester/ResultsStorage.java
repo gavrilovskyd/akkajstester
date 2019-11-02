@@ -1,6 +1,8 @@
 package ru.labs.jstester;
 
 import akka.actor.AbstractActor;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import java.util.List;
 
 public class ResultsStorage extends AbstractActor {
     private HashMap<String, List<TestResult>> innerStorage = new HashMap<>();
+    private LoggingAdapter logger = Logging.getLogger(getContext().getSystem(), this);
 
     @Override
     public Receive createReceive() {
