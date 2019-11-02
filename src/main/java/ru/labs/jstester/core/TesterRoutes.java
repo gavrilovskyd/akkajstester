@@ -48,22 +48,22 @@ public class TesterRoutes extends AllDirectives {
               Future<HttpResponse> possibleResponse = Patterns
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
                       .map((Object parameter) -> {
-                              ObjectMapper mapper = new ObjectMapper();
-                              try {
-                                  if (!(parameter instanceof TestResultResponse[])) {
-                                      logger.error("wrong future parameter {}, expected TestResult[]",
-                                              parameter.getClass().toString());
-                                      return HttpResponse.create()
-                                              .withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                              .withEntity(
-                                                      HttpEntities.create(
-                                                              ContentTypes.APPLICATION_JSON,
-                                                              mapper.writeValueAsBytes(
-                                                                      new TextResponse("wooops!!!")
-                                                              )
-                                                      )
-                                              );
-                                  }
+                          ObjectMapper mapper = new ObjectMapper();
+                          try {
+                              if (!(parameter instanceof TestResultResponse[])) {
+                                  logger.error("wrong future parameter {}, expected TestResult[]",
+                                          parameter.getClass().toString());
+                                  return HttpResponse.create()
+                                          .withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
+                                          .withEntity(
+                                                  HttpEntities.create(
+                                                          ContentTypes.APPLICATION_JSON,
+                                                          mapper.writeValueAsBytes(
+                                                                  new TextResponse("wooops!!!")
+                                                          )
+                                                  )
+                                          );
+                              }
 
                                   TestResultResponse[] results = ((TestResultResponse[]) parameter);
                                   if (results.length == 0) {
