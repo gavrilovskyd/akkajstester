@@ -50,32 +50,38 @@ public class TesterRoutes extends AllDirectives {
                       .map(new Mapper<Object, HttpResponse>(){
                           @Override
                           public HttpResponse apply(Object parameter) {
-                              if (!(parameter instanceof TestResult[])) {
-                                  logger.error("wrong future parameter {}, expected TestResult[]",
-                                          parameter.getClass().toString());
-                                  return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                          .withEntity("Wooops!!!");
-                              }
-
-                              ObjectMapper mapper = new ObjectMapper();
-                              TestResult[] results = ((TestResult[])parameter);
-                              if (results.length == 0) {
-                                  logger.warning("submit {} does not found", packageID);
-                                  return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
-                                          .withEntity("Submit does not found");
-                              }
-
                               try {
-                                  byte[] marshaled = mapper.writeValueAsBytes(parameter);
 
-                                  return HttpResponse.create().withStatus(StatusCodes.OK)
-                                          .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
+                                  if (!(parameter instanceof TestResult[])) {
+                                      logger.error("wrong future parameter {}, expected TestResult[]",
+                                              parameter.getClass().toString());
+                                      return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
+                                              .withEntity("Wooops!!!");
+                                  }
+
+                                  ObjectMapper mapper = new ObjectMapper();
+                                  TestResult[] results = ((TestResult[]) parameter);
+                                  if (results.length == 0) {
+                                      logger.warning("submit {} does not found", packageID);
+                                      return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
+                                              .withEntity("Submit does not found");
+                                  }
+
+                                  try {
+                                      byte[] marshaled = mapper.writeValueAsBytes(parameter);
+
+                                      return HttpResponse.create().withStatus(StatusCodes.OK)
+                                              .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
+                                  } catch (JsonProcessingException e) {
+                                      logger.error("got json processing exception {}", e.getMessage());
+                                      return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
+                                              .withEntity("Wooops!!!");
+                                  }
                               } catch (JsonProcessingException e) {
                                   logger.error("got json processing exception {}", e.getMessage());
                                   return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                           .withEntity("Wooops!!!");
                               }
-
                           }
                       }, system.dispatcher());
               return completeWithFutureResponse(possibleResponse);
