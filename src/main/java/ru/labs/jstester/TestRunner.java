@@ -7,6 +7,7 @@ import akka.japi.pf.ReceiveBuilder;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
 public class TestRunner extends AbstractActor {
     private final static String JS_ENGINE = "nashorn";
@@ -30,7 +31,9 @@ public class TestRunner extends AbstractActor {
                         String output = invocable.invokeFunction(
                                 task.getMeta().getFunctionName(), task.getTest().getParams()
                         ).toString(); // TODO: add timeout
-                    } catch ()
+                    } catch (ScriptException e) {
+                        
+                    }
 
 
                     String status = (output.equals(task.getTest().getExpectedResult()) ?
