@@ -23,7 +23,7 @@ public class TestRunner extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(TestTask.class, task -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName(JS_ENGINE);
-                    
+
                     String output;
                     String status;
                     try {
