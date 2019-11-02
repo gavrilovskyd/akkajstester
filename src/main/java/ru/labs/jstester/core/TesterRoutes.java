@@ -67,10 +67,8 @@ public class TesterRoutes extends AllDirectives {
                                               .withEntity(mapper.writeValueAsBytes(new TextResponseMessage("Submit does not found")));
                                   }
 
-
-                                  byte[] marshaled = ;
                                   return HttpResponse.create().withStatus(StatusCodes.OK)
-                                          .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
+                                          .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, mapper.writeValueAsBytes(parameter)));
                               } catch (JsonProcessingException e) {
                                   logger.error("got json processing exception {}", e.getMessage());
                                   return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
