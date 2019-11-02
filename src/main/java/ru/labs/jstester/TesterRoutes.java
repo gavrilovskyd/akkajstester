@@ -56,7 +56,6 @@ public class TesterRoutes extends AllDirectives {
                               }
 
                               try {
-                                  System.out.println(parameter);
                                   byte[] marshaled = mapper.writeValueAsBytes(parameter);
 
                                   return HttpResponse.create().withStatus(StatusCodes.OK)
