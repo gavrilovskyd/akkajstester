@@ -89,7 +89,7 @@ public class TesterRoutes extends AllDirectives {
                                 entity(Jackson.unmarshaller(TestRequest.class), r -> {
                                     requestRouter.tell(r, ActorRef.noSender());
                                     return complete(
-                                            StatusCodes.OK,
+                                            StatusCodes.CREATED,
                                             new TextResponseMessage("Tests started!"),
                                             Jackson.marshaller()
                                     );
