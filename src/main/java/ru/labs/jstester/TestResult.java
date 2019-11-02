@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 public class TestResult {
     public static final String OK_STATUS = "OK";
     public static final String WRONG_ANSWER_STATUS = "WA";
+    public static final String RUNTIME_ERROR_STATUS = "RE";
     public static final String TIME_LIMIT_STATUS = "TL";
 
     private Test test;
