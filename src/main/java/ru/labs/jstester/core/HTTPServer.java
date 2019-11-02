@@ -1,4 +1,4 @@
-package ru.labs.jstester;
+package ru.labs.jstester.core;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
