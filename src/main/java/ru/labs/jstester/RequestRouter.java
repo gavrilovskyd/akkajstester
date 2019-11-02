@@ -33,7 +33,7 @@ public class RequestRouter extends AbstractActor {
                 })
                 .match(ResultRequest.class, r -> {
                     resultStorage.forward(r, getContext());
-                })
+                }).matchAny(o -> { logger.warning("got unknown message: {}", o.getClass().toString()); })
                 .build();
     }
 }
