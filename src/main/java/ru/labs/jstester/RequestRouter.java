@@ -23,6 +23,7 @@ public class RequestRouter extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(TestRequest.class, r -> {
                     for (Test test : r.getTests()) {
+                        test.setPackageID(r.getPackageID());
                         testRunnersPool.tell(
                                 new TestTask(r, test), getSelf());
                     }
