@@ -28,6 +28,8 @@ public class RequestRouterActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TestRequest.class, r -> {
+                    logger.info("got test request with package_id: {}", r.getPackageID());
+
                     for (Test test : r.getTests()) {
                         test.setPackageID(r.getPackageID());
                         testRunnersPool.tell(
