@@ -67,6 +67,9 @@ public class TesterRoutes extends AllDirectives {
                                   return HttpResponse.create().withStatus(StatusCodes.OK)
                                           .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
                               } catch (JsonProcessingException e) {
+                                  logger.error("wrong future parameter {}, expected TestResult[]",
+                                          parameter.getClass().toString());
+                                  
                                   return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                           .withEntity("Wooops!!!");
                               }
