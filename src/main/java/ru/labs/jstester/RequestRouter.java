@@ -4,12 +4,15 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.BalancingPool;
 
 public class RequestRouter extends AbstractActor {
     private ActorRef resultStorage;
     private ActorRef testRunnersPool;
+    private LoggingAdapter logger = Logging.getLogger(getContext().getSystem(), this);
 
     public RequestRouter() {
         this.resultStorage = getContext().actorOf(
