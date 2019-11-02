@@ -80,14 +80,14 @@ public class TesterRoutes extends AllDirectives {
                                           );
                               }
 
-                                  return HttpResponse.create()
-                                          .withStatus(StatusCodes.OK)
-                                          .withEntity(
-                                                  HttpEntities.create(
-                                                          ContentTypes.APPLICATION_JSON,
-                                                          mapper.writeValueAsBytes(parameter)
-                                                  )
-                                          );
+                              return HttpResponse.create()
+                                      .withStatus(StatusCodes.OK)
+                                      .withEntity(
+                                              HttpEntities.create(
+                                                      ContentTypes.APPLICATION_JSON,
+                                                      mapper.writeValueAsBytes(parameter)
+                                              )
+                                      );
                               } catch (JsonProcessingException e) {
                                   logger.error("got json processing exception {}", e.getMessage());
                                   return HttpResponse.create()
