@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import ru.labs.jstester.messages.ResultRequest;
 import ru.labs.jstester.messages.TestRequest;
 import ru.labs.jstester.messages.TestResult;
+import ru.labs.jstester.messages.TextResponseMessage;
 import scala.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {
@@ -87,7 +88,7 @@ public class TesterRoutes extends AllDirectives {
                         post(() ->
                                 entity(Jackson.unmarshaller(TestRequest.class), r -> {
                                     requestRouter.tell(r, ActorRef.noSender());
-                                    return complete(StatusCodes.OK, "Tests started!");
+                                    return complete(StatusCodes.OK, new TextResponseMessage("Tests started!"));
                                 }))
                 )
         );
