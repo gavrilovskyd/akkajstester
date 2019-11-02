@@ -55,7 +55,8 @@ public class TesterRoutes extends AllDirectives {
                                   if (!(parameter instanceof TestResult[])) {
                                       logger.error("wrong future parameter {}, expected TestResult[]",
                                               parameter.getClass().toString());
-                                      return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
+                                      return HttpResponse.create()
+                                              .withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                               .withEntity(
                                                       HttpEntities.create(
                                                               ContentTypes.APPLICATION_JSON,
@@ -67,7 +68,8 @@ public class TesterRoutes extends AllDirectives {
                                   TestResult[] results = ((TestResult[]) parameter);
                                   if (results.length == 0) {
                                       logger.warning("submit {} does not exist", packageID);
-                                      return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
+                                      return HttpResponse.create()
+                                              .withStatus(StatusCodes.NOT_FOUND)
                                               .withEntity(
                                                       HttpEntities.create(
                                                               ContentTypes.APPLICATION_JSON,
@@ -76,7 +78,8 @@ public class TesterRoutes extends AllDirectives {
                                               );
                                   }
 
-                                  return HttpResponse.create().withStatus(StatusCodes.OK)
+                                  return HttpResponse.create()
+                                          .withStatus(StatusCodes.OK)
                                           .withEntity(
                                                   HttpEntities.create(
                                                           ContentTypes.APPLICATION_JSON,
