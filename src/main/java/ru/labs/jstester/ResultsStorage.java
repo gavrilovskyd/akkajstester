@@ -30,8 +30,7 @@ public class ResultsStorage extends AbstractActor {
                     if (results == null) {
                         getSender().tell(new TestResult[]{}, getSelf());
                     } else {
-                        TestResult[] r = results.toArray(new TestResult[0]);
-                        getSender().tell(r, getSelf());
+                        getSender().tell(results.toArray(new TestResult[0]), getSelf());
                     }
                 })
                 .build();
