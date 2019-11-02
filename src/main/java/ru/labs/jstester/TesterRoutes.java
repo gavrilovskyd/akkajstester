@@ -3,6 +3,7 @@ package ru.labs.jstester;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.dispatch.Mapper;
+import akka.event.LoggingAdapter;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.AllDirectives;
@@ -11,7 +12,6 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import scala.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {
@@ -19,6 +19,7 @@ public class TesterRoutes extends AllDirectives {
 
     private ActorRef requestRouter;
     private ActorSystem system;
+    private LoggingAdapter logger;
 
     public TesterRoutes(ActorSystem system, ActorRef requestRouter) {
         this.system = system;
