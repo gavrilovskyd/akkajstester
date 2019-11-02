@@ -76,7 +76,7 @@ public class TesterRoutes extends AllDirectives {
                                                       HttpEntities.create(
                                                               ContentTypes.APPLICATION_JSON,
                                                               mapper.writeValueAsBytes(
-                                                                      new TextResponse("Submit does not exist")
+                                                                      new TextResponse("submit does not exist")
                                                               )
                                                       )
                                               );
