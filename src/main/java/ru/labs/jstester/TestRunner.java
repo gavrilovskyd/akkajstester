@@ -2,6 +2,8 @@ package ru.labs.jstester;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
@@ -13,6 +15,7 @@ public class TestRunner extends AbstractActor {
     private final static String JS_ENGINE = "nashorn";
 
     private ActorRef resultStorage;
+    private LoggingAdapter logger = Logging.getLogger(getContext().getSystem(), this);
 
     public TestRunner(ActorRef resultStorage) {
         this.resultStorage = resultStorage;
