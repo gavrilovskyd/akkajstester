@@ -23,7 +23,7 @@ public class TestRunner extends AbstractActor {
                 .match(TestTask.class, task -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName(JS_ENGINE);
                     engine.eval(task.getMeta().getJsCode());
-                    
+
                     Invocable invocable = (Invocable)engine;
                     String output = invocable.invokeFunction(
                             task.getMeta().getFunctionName(), task.getTest().getParams()
