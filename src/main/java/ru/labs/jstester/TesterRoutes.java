@@ -56,6 +56,7 @@ public class TesterRoutes extends AllDirectives {
                               ObjectMapper mapper = new ObjectMapper();
                               TestResult[] results = ((TestResult[])parameter);
                               if (results.length == 0) {
+                                  logger.warning("submit {} does not found", packageID);
                                   return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
                                           .withEntity("Submit does not found");
                               }
