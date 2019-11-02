@@ -88,12 +88,12 @@ public class TesterRoutes extends AllDirectives {
                                                       mapper.writeValueAsBytes(parameter)
                                               )
                                       );
-                              } catch (JsonProcessingException e) {
-                                  logger.error("got json processing exception {}", e.getMessage());
-                                  return HttpResponse.create()
-                                          .withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                          .withEntity("wooops!!!");
-                              }
+                          } catch (JsonProcessingException e) {
+                              logger.error("got json processing exception {}", e.getMessage());
+                              return HttpResponse.create()
+                                      .withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
+                                      .withEntity("wooops!!!");
+                          }
                       }, system.dispatcher());
               return completeWithFutureResponse(possibleResponse);
         });
