@@ -46,7 +46,8 @@ public class TestRunnerActor extends AbstractActor {
                     }
 
                     resultStorage.tell(new TestResult(task.getTest(), output, status), getSelf());
-                }).matchAny(o -> { logger.warning("got unknown message: {}", o.getClass().toString()); })
+                })
+                .matchAny(o -> { logger.warning("got unknown message: {}", o.getClass().toString()); })
                 .build();
     }
 }
