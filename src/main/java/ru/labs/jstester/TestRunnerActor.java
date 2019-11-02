@@ -11,13 +11,13 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
-public class TestRunner extends AbstractActor {
+public class TestRunnerActor extends AbstractActor {
     private final static String JS_ENGINE = "nashorn";
 
     private ActorRef resultStorage;
     private LoggingAdapter logger = Logging.getLogger(getContext().getSystem(), this);
 
-    public TestRunner(ActorRef resultStorage) {
+    public TestRunnerActor(ActorRef resultStorage) {
         this.resultStorage = resultStorage;
     }
 

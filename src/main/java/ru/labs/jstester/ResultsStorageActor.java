@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ResultsStorage extends AbstractActor {
+public class ResultsStorageActor extends AbstractActor {
     private HashMap<String, List<TestResult>> innerStorage = new HashMap<>();
     private LoggingAdapter logger = Logging.getLogger(getContext().getSystem(), this);
 
