@@ -1,5 +1,9 @@
 package ru.labs.jstester;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class TestResult {
     public static final String OK_STATUS = "OK";
     public static final String WRONG_ANSWER_STATUS = "WA";
