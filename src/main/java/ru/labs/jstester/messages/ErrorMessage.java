@@ -10,4 +10,12 @@ public class ErrorMessage {
     public ErrorMessage() {
         this.message = "";
     }
+
+    public ErrorMessage(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }
