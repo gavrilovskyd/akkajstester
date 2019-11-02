@@ -5,7 +5,7 @@ import akka.actor.ActorRef;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
-import ru.labs.jstester.messages.HttpResponse.TestResultResponse;
+import ru.labs.jstester.messages.HttpResponses.TestResultResponse;
 import ru.labs.jstester.messages.TestTask;
 
 import javax.script.Invocable;

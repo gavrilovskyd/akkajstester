@@ -5,7 +5,7 @@ import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import ru.labs.jstester.messages.HttpRequests.ResultRequest;
-import ru.labs.jstester.messages.HttpResponse.TestResultResponse;
+import ru.labs.jstester.messages.HttpResponses.TestResultResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;

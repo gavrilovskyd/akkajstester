@@ -1,4 +1,4 @@
-package ru.labs.jstester.messages.HttpResponse;
+package ru.labs.jstester.messages.HttpResponses;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
