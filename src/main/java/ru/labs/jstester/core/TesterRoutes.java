@@ -49,7 +49,6 @@ public class TesterRoutes extends AllDirectives {
                       .map(new Mapper<Object, HttpResponse>(){
                           @Override
                           public HttpResponse apply(Object parameter) {
-                              ObjectMapper mapper = new ObjectMapper();
                               if (!(parameter instanceof TestResult[])) {
                                   logger.error("wrong future parameter {}, expected TestResult[]",
                                           parameter.getClass().toString());
@@ -57,6 +56,7 @@ public class TesterRoutes extends AllDirectives {
                                           .withEntity("Wooops!!!");
                               }
 
+                              ObjectMapper mapper = new ObjectMapper();
                               TestResult[] results = ((TestResult[])parameter);
                               if (results.length == 0) {
                                   logger.warning("submit {} does not found", packageID);
