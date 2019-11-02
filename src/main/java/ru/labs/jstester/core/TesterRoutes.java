@@ -10,6 +10,7 @@ import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.PathMatchers;
 import akka.http.javadsl.server.Route;
+import akka.http.scaladsl.model.ContentType;
 import akka.pattern.Patterns;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -51,13 +52,15 @@ public class TesterRoutes extends AllDirectives {
                           @Override
                           public HttpResponse apply(Object parameter) {
                               ObjectMapper mapper = new ObjectMapper();
-
                               try {
                                   if (!(parameter instanceof TestResult[])) {
                                       logger.error("wrong future parameter {}, expected TestResult[]",
                                               parameter.getClass().toString());
                                       return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                              .withEntity(mapper.writeValueAsBytes(new TextResponseMessage("Wooops!!!")));
+                                              .withEntity(
+                                                      HttpEntities.create(
+                                                              ContentTypes.APPLICATION_JSON,
+                                                              mapper.writeValueAsBytes(new TextResponseMessage("Wooops!!!")));
                                   }
 
                                   TestResult[] results = ((TestResult[]) parameter);
