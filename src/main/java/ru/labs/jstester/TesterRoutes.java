@@ -3,6 +3,7 @@ package ru.labs.jstester;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.dispatch.Mapper;
+import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.*;
@@ -24,6 +25,7 @@ public class TesterRoutes extends AllDirectives {
     public TesterRoutes(ActorSystem system, ActorRef requestRouter) {
         this.system = system;
         this.requestRouter = requestRouter;
+        this.logger = Logging.getLogger(system, this);
     }
 
     public Route routes() {
