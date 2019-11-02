@@ -25,9 +25,13 @@ public class TestRunner extends AbstractActor {
                     engine.eval(task.getMeta().getJsCode());
 
                     Invocable invocable = (Invocable)engine;
-                    String output = invocable.invokeFunction(
-                            task.getMeta().getFunctionName(), task.getTest().getParams()
-                    ).toString(); // TODO: add timeout
+
+                    try {
+                        String output = invocable.invokeFunction(
+                                task.getMeta().getFunctionName(), task.getTest().getParams()
+                        ).toString(); // TODO: add timeout
+                    }
+
 
                     String status = (output.equals(task.getTest().getExpectedResult()) ?
                             TestResult.OK_STATUS : TestResult.WRONG_ANSWER_STATUS );
