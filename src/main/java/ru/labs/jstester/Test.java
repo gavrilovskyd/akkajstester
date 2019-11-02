@@ -18,10 +18,14 @@ public class Test {
     }
 
     public Test(String name, String expectedResult, Object[] params) {
-        this.packageID = packageID;
+        this.packageID = "";
         this.testName = name;
         this.expectedResult = expectedResult;
         this.params = params;
+    }
+
+    public void setPackageID(String packageID) {
+        this.packageID = packageID;
     }
 
     public String getPackageID() {
