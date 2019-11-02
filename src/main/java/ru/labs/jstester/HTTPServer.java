@@ -9,7 +9,7 @@ public class HTTPServer {
     private TesterRoutes testerRoutes;
 
     public HTTPServer(ActorSystem system) {
-        ActorRef requestRouter = system.actorOf(Props.create(RequestRouter.class), "request-router");
+        ActorRef requestRouter = system.actorOf(Props.create(RequestRouterActor.class), "request-router");
         this.testerRoutes = new TesterRoutes(system, requestRouter);
     }
 

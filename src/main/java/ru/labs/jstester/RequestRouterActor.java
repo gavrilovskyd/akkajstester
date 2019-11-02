@@ -2,19 +2,18 @@ package ru.labs.jstester;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
-import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.BalancingPool;
 
-public class RequestRouter extends AbstractActor {
+public class RequestRouterActor extends AbstractActor {
     private ActorRef resultStorage;
     private ActorRef testRunnersPool;
     private LoggingAdapter logger = Logging.getLogger(getContext().getSystem(), this);
 
-    public RequestRouter() {
+    public RequestRouterActor() {
         this.resultStorage = getContext().actorOf(
                 Props.create(ResultsStorage.class), "result-storage");
         this.testRunnersPool = getContext().actorOf(
