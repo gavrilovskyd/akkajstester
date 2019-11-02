@@ -38,7 +38,7 @@ public class TestRunner extends AbstractActor {
                                 TestResult.OK_STATUS : TestResult.WRONG_ANSWER_STATUS );
                     } catch (ScriptException e) {
                         output = e.getMessage();
-
+                        status = TestResult.RUNTIME_ERROR_STATUS;
                     }
 
                     resultStorage.tell(new TestResult(task.getTest(), output, status), getSelf());
