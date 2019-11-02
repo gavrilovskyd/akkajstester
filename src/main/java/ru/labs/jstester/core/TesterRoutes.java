@@ -51,7 +51,6 @@ public class TesterRoutes extends AllDirectives {
                           @Override
                           public HttpResponse apply(Object parameter) {
                               try {
-
                                   if (!(parameter instanceof TestResult[])) {
                                       logger.error("wrong future parameter {}, expected TestResult[]",
                                               parameter.getClass().toString());
