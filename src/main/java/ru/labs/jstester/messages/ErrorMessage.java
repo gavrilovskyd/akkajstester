@@ -5,4 +5,9 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class ErrorMessage {
+    private String message;
+
+    public ErrorMessage() {
+        this.message = "";
+    }
 }
