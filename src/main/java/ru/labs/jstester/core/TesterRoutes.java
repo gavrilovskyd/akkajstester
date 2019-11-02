@@ -67,12 +67,12 @@ public class TesterRoutes extends AllDirectives {
 
                                   TestResult[] results = ((TestResult[]) parameter);
                                   if (results.length == 0) {
-                                      logger.warning("submit {} does not found", packageID);
+                                      logger.warning("submit {} does not exist", packageID);
                                       return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
                                               .withEntity(
                                                       HttpEntities.create(
                                                               ContentTypes.APPLICATION_JSON,
-                                                              mapper.writeValueAsBytes(new TextResponseMessage("Wooops!!!"))
+                                                              mapper.writeValueAsBytes(new TextResponseMessage("submit {} does not exist"))
                                                       )
                                               );
                                   }
