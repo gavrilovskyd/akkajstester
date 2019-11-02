@@ -51,12 +51,13 @@ public class TesterRoutes extends AllDirectives {
                           @Override
                           public HttpResponse apply(Object parameter) {
                               ObjectMapper mapper = new ObjectMapper();
+
                               try {
                                   if (!(parameter instanceof TestResult[])) {
                                       logger.error("wrong future parameter {}, expected TestResult[]",
                                               parameter.getClass().toString());
                                       return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                              .withEntity("Wooops!!!");
+                                              .withEntity(mapper.writeValueAsBytes(new TextResponseMessage("Wooops!!!")));
                                   }
 
                                   TestResult[] results = ((TestResult[]) parameter);
@@ -67,7 +68,7 @@ public class TesterRoutes extends AllDirectives {
                                   }
 
 
-                                  byte[] marshaled = mapper.writeValueAsBytes(parameter);
+                                  byte[] marshaled = ;
                                   return HttpResponse.create().withStatus(StatusCodes.OK)
                                           .withEntity(HttpEntities.create(ContentTypes.APPLICATION_JSON, marshaled));
                               } catch (JsonProcessingException e) {
