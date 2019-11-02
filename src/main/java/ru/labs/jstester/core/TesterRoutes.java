@@ -47,9 +47,7 @@ public class TesterRoutes extends AllDirectives {
         return get(()-> {
               Future<HttpResponse> possibleResponse = Patterns
                       .ask(requestRouter, new ResultRequest(packageID), TIMEOUT_MS)
-                      .map(() -> {
-                          @Override
-                          public HttpResponse apply(Object parameter) {
+                      .map((Object parameter) -> {
                               ObjectMapper mapper = new ObjectMapper();
                               try {
                                   if (!(parameter instanceof TestResultResponse[])) {
@@ -95,7 +93,6 @@ public class TesterRoutes extends AllDirectives {
                                   return HttpResponse.create()
                                           .withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
                                           .withEntity("wooops!!!");
-                              }
                           }
                       }, system.dispatcher());
               return completeWithFutureResponse(possibleResponse);
