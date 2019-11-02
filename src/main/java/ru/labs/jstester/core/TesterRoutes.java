@@ -94,7 +94,7 @@ public class TesterRoutes extends AllDirectives {
                                   logger.error("got json processing exception {}", e.getMessage());
                                   return HttpResponse.create()
                                           .withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                          .withEntity("Wooops!!!");
+                                          .withEntity("wooops!!!");
                               }
                           }
                       }, system.dispatcher());
