@@ -74,7 +74,7 @@ public class TesterRoutes extends AllDirectives {
                                                               ContentTypes.APPLICATION_JSON,
                                                               mapper.writeValueAsBytes(new TextResponseMessage("Wooops!!!"))
                                                       )
-                                              )
+                                              );
                                   }
 
                                   return HttpResponse.create().withStatus(StatusCodes.OK)
