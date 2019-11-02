@@ -61,7 +61,7 @@ public class TesterRoutes extends AllDirectives {
                                                       HttpEntities.create(
                                                               ContentTypes.APPLICATION_JSON,
                                                               mapper.writeValueAsBytes(
-                                                                      new TextResponse("Wooops!!!")
+                                                                      new TextResponse("wooops!!!")
                                                               )
                                                       )
                                               );
