@@ -35,7 +35,7 @@ public class ResultsStorage extends AbstractActor {
                     } else {
                         getSender().tell(results.toArray(new TestResult[0]), getSelf());
                     }
-                })
+                }).matchAny(o -> { logger.warning("got unknown message: {}", o.getClass().toString()); })
                 .build();
     }
 }
