@@ -29,7 +29,7 @@ public class TestRunner extends AbstractActor {
 
                     String output;
                     try {
-                        String output = invocable.invokeFunction(
+                        output = invocable.invokeFunction(
                                 task.getMeta().getFunctionName(), task.getTest().getParams()
                         ).toString(); // TODO: add timeout
                     } catch (ScriptException e) {
