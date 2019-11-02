@@ -15,8 +15,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ru.labs.jstester.messages.HttpRequests.ResultRequest;
 import ru.labs.jstester.messages.HttpRequests.TestRequest;
-import ru.labs.jstester.messages.TestResult;
-import ru.labs.jstester.messages.TextResponse;
+import ru.labs.jstester.messages.HttpResponse.TestResult;
+import ru.labs.jstester.messages.HttpResponse.TextResponse;
 import scala.concurrent.Future;
 
 public class TesterRoutes extends AllDirectives {
