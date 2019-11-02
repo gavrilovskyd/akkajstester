@@ -65,20 +65,20 @@ public class TesterRoutes extends AllDirectives {
                                           );
                               }
 
-                                  TestResultResponse[] results = ((TestResultResponse[]) parameter);
-                                  if (results.length == 0) {
-                                      logger.warning("submit {} does not exist", packageID);
-                                      return HttpResponse.create()
-                                              .withStatus(StatusCodes.NOT_FOUND)
-                                              .withEntity(
-                                                      HttpEntities.create(
-                                                              ContentTypes.APPLICATION_JSON,
-                                                              mapper.writeValueAsBytes(
-                                                                      new TextResponse("submit does not exist")
-                                                              )
-                                                      )
-                                              );
-                                  }
+                              TestResultResponse[] results = ((TestResultResponse[]) parameter);
+                              if (results.length == 0) {
+                                  logger.warning("submit {} does not exist", packageID);
+                                  return HttpResponse.create()
+                                          .withStatus(StatusCodes.NOT_FOUND)
+                                          .withEntity(
+                                                  HttpEntities.create(
+                                                          ContentTypes.APPLICATION_JSON,
+                                                          mapper.writeValueAsBytes(
+                                                                  new TextResponse("submit does not exist")
+                                                          )
+                                                  )
+                                          );
+                              }
 
                                   return HttpResponse.create()
                                           .withStatus(StatusCodes.OK)
