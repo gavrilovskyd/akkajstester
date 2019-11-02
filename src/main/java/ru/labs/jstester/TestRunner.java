@@ -33,7 +33,7 @@ public class TestRunner extends AbstractActor {
                                 task.getMeta().getFunctionName(), task.getTest().getParams()
                         ).toString(); // TODO: add timeout
                     } catch (ScriptException e) {
-
+                        output = e.getMessage();
                     }
 
 
