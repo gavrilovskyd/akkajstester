@@ -17,7 +17,7 @@ public class Test {
         this.params = new Object[]{};
     }
 
-    public Test(String packageID, String name, String expectedResult, Object[] params) {
+    public Test(String name, String expectedResult, Object[] params) {
         this.packageID = packageID;
         this.testName = name;
         this.expectedResult = expectedResult;
