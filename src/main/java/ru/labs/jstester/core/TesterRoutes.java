@@ -72,7 +72,7 @@ public class TesterRoutes extends AllDirectives {
                                               .withEntity(
                                                       HttpEntities.create(
                                                               ContentTypes.APPLICATION_JSON,
-                                                              mapper.writeValueAsBytes(new TextResponseMessage("submit {} does not exist"))
+                                                              mapper.writeValueAsBytes(new TextResponseMessage("Submit does not exist"))
                                                       )
                                               );
                                   }
