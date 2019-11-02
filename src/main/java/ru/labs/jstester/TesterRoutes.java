@@ -45,7 +45,7 @@ public class TesterRoutes extends AllDirectives {
                           public HttpResponse apply(Object parameter) {
                               if (!(parameter instanceof TestResult[])) {
                                   return HttpResponse.create().withStatus(StatusCodes.INTERNAL_SERVER_ERROR)
-                                          .withEntity(parameter.getClass().toString());
+                                          .withEntity("Wooops!!!");
                               }
 
                               ObjectMapper mapper = new ObjectMapper();
