@@ -64,7 +64,7 @@ public class TesterRoutes extends AllDirectives {
                                   if (results.length == 0) {
                                       logger.warning("submit {} does not found", packageID);
                                       return HttpResponse.create().withStatus(StatusCodes.NOT_FOUND)
-                                              .withEntity("Submit does not found");
+                                              .withEntity(mapper.writeValueAsBytes(new TextResponseMessage("Submit does not found")));
                                   }
 
 
