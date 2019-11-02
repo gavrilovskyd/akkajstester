@@ -41,9 +41,6 @@ public class TestRunner extends AbstractActor {
 
                     }
 
-
-                    String
-
                     resultStorage.tell(new TestResult(task.getTest(), output, status), getSelf());
                 })
                 .build();
