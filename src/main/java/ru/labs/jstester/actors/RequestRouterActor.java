@@ -23,7 +23,8 @@ public class RequestRouterActor extends AbstractActor {
         this.resultStorage = getContext().actorOf(
                 Props.create(ResultsStorageActor.class), "result-storage");
         this.testRunnersPool = getContext().actorOf(
-                new BalancingPool(TESTERS_BALANCER_POOL_SIZE).props(Props.create(TestRunnerActor.class, this.resultStorage)), "test-runners");
+                new BalancingPool(TESTERS_BALANCER_POOL_SIZE)
+                        .props(Props.create(TestRunnerActor.class, this.resultStorage)), "test-runners");
     }
 
     @Override
