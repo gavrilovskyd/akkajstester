@@ -1,7 +1,9 @@
-package ru.labs.jstester.messages;
+package ru.labs.jstester.messages.HttpRequests;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import ru.labs.jstester.messages.Test;
+import ru.labs.jstester.messages.TestMetaInfo;
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class TestRequest extends TestMetaInfo {

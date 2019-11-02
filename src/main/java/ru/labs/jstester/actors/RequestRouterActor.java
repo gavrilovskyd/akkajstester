@@ -7,9 +7,9 @@ import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.BalancingPool;
-import ru.labs.jstester.messages.ResultRequest;
+import ru.labs.jstester.messages.HttpRequests.ResultRequest;
 import ru.labs.jstester.messages.Test;
-import ru.labs.jstester.messages.TestRequest;
+import ru.labs.jstester.messages.HttpRequests.TestRequest;
 import ru.labs.jstester.messages.TestTask;
 
 public class RequestRouterActor extends AbstractActor {
