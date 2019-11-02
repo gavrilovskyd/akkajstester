@@ -23,13 +23,12 @@ public class TestRunner extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(TestTask.class, task -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName(JS_ENGINE);
-                    engine.eval(task.getMeta().getJsCode());
-
-                    Invocable invocable = (Invocable)engine;
-
+                    
                     String output;
                     String status;
                     try {
+                        engine.eval(task.getMeta().getJsCode());
+                        Invocable invocable = (Invocable)engine;
                         output = invocable.invokeFunction(
                                 task.getMeta().getFunctionName(), task.getTest().getParams()
                         ).toString(); // TODO: add timeout
